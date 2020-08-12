@@ -20,6 +20,10 @@ class CreatePurchasesTable extends Migration
             $table->date('startdate');
             $table->date('finishdate');
             $table->date('deadline');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('publication_id');
+            $table->foreign('publication_id')->references('id')->on('publications');
             $table->timestamps();
         });
     }

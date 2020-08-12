@@ -17,6 +17,8 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->smallInteger('paymentMethod');
             $table->bigInteger('card');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

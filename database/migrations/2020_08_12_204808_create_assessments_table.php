@@ -19,6 +19,10 @@ class CreateAssessmentsTable extends Migration
             $table->date('date');
             $table->string('comment', "500");
             $table->timestamps();
+            $table->unsignedBigInteger('publication_id');
+            $table->foreign('publication_id')->references('id')->on('publications');
+            $table->unsignedBigInteger('purchase_id');
+            $table->foreign('purchase_id')->references('id')->on('purchases');
         });
     }
 

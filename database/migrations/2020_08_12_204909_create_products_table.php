@@ -17,7 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', "20");
             $table->smallInteger('availability');
-            
+            $table->unsignedBigInteger('publication_id');
+            $table->foreign('publication_id')->references('id')->on('publications');
             $table->timestamps();
         });
     }
