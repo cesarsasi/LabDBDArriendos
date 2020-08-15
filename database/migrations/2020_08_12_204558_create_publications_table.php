@@ -14,7 +14,7 @@ class CreatePublicationsTable extends Migration
     public function up()
     {
         Schema::create('publications', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->string('description', "500");
             $table->float('price');
             $table->smallInteger('stock');

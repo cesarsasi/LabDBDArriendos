@@ -14,7 +14,7 @@ class CreateAssessmentsTable extends Migration
     public function up()
     {
         Schema::create('assessments', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->smallInteger('score');
             $table->date('date');
             $table->string('comment', "500");

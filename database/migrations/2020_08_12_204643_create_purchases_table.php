@@ -14,7 +14,7 @@ class CreatePurchasesTable extends Migration
     public function up()
     {
         Schema::create('purchases', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->smallInteger('paymentMethod');
             $table->bigInteger('card');
             $table->date('startdate');
