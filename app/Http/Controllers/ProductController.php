@@ -78,7 +78,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        if ($request->name != NULL){
+            $product->name = $request->name;
+        }
+        if ($request->availability != NULL){
+            $product->availability = $request->availability;
+        }
+
+        $product->save();
+        return response()->json($product);
     }
 
     /**

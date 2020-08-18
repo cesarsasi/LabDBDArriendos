@@ -79,7 +79,20 @@ class LocationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $location = Location::find($id);
+
+        if ($request->region != NULL){
+            $location->region = $request->region;
+        }
+        if ($request->commune != NULL){
+            $location->commune = $request->commune;
+        }
+        if ($request->street != NULL){
+            $location->street = $request->street;
+        }
+
+        $location->save();
+        return response()->json($location);
     }
 
     /**

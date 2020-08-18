@@ -77,7 +77,14 @@ class RolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rol = Rol::find($id);
+
+        if ($request->type != NULL){
+            $rol->type = $request->type;
+        }
+
+        $rol->save();
+        return response()->json($rol);
     }
 
     /**

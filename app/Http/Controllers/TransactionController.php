@@ -78,7 +78,17 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $transaction = Transaction::find($id);
+
+        if ($request->paymentMethod != NULL){
+            $transaction->paymentMethod = $request->paymentMethod;
+        }
+        if ($request->card != NULL){
+            $transaction->card = $request->card;
+        }
+
+        $transaction->save();
+        return response()->json($transaction);
     }
 
     /**

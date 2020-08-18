@@ -79,7 +79,20 @@ class AssessmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $assessment = Assessment::find($id);
+
+        if ($request->score != NULL){
+            $assessment->score = $request->score;
+        }
+        if ($request->date != NULL){
+            $assessment->date = $request->date;
+        }
+        if ($request->comment != NULL){
+            $assessment->comment = $request->comment;
+        }
+
+        $assessment->save();
+        return response()->json($assessment);
     }
 
     /**

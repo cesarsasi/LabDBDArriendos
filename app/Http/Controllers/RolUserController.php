@@ -72,7 +72,7 @@ class RolUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //No se como se hace si no tiene mas que solo foreankey *************************** Revisar
     }
 
     /**

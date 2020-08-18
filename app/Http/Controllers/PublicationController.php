@@ -79,7 +79,20 @@ class PublicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $publication = Publication::find($id);
+
+        if ($request->description != NULL){
+            $publication->description = $request->description;
+        }
+        if ($request->price != NULL){
+            $publication->price = $request->price;
+        }
+        if ($request->stock != NULL){
+            $publication->stock = $request->stock;
+        }
+
+        $publication->save();
+        return response()->json($publication);
     }
 
     /**

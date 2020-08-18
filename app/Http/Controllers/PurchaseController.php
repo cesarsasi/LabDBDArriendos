@@ -81,7 +81,26 @@ class PurchaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $purchase = Purchase::find($id);
+
+        if ($request->paymentMethod != NULL){
+            $purchase->paymentMethod = $request->paymentMethod;
+        }
+        if ($request->card != NULL){
+            $purchase->card = $request->card;
+        }
+        if ($request->startdate != NULL){
+            $purchase->startdate = $request->startdate;
+        }
+        if ($request->finishdate != NULL){
+            $purchase->finishdate = $request->finishdate;
+        }
+        if ($request->deadline != NULL){
+            $purchase->deadline = $request->deadline;
+        }
+
+        $purchase->save();
+        return response()->json($purchase);
     }
 
     /**
