@@ -43,10 +43,10 @@ class PurchaseController extends Controller
         $purchase->startdate = $request->startdate;
         $purchase->finishdate = $request->finishdate;
         $purchase->deadline = $request->deadline;
+        $purchase->user_id = $request->user_id;
+        $purchase->publication_id = $request->publication_id;
         $purchase->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($purchase);
     }
 
     /**
@@ -97,6 +97,12 @@ class PurchaseController extends Controller
         }
         if ($request->deadline != NULL){
             $purchase->deadline = $request->deadline;
+        }
+        if ($request->user_id != NULL){
+            $purchase->user_id = $request->user_id;
+        }
+        if ($request->publication_id != NULL){
+            $purchase->publication_id = $request->publication_id;
         }
 
         $purchase->save();

@@ -40,10 +40,9 @@ class TransactionController extends Controller
         $transaction = new Transaction();
         $transaction->paymentMethod = $request->paymentMethod;
         $transaction->card = $request->card;
+        $transaction->user_id = $request->user_id;
         $transaction->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($transaction);
     }
 
     /**
@@ -85,6 +84,9 @@ class TransactionController extends Controller
         }
         if ($request->card != NULL){
             $transaction->card = $request->card;
+        }
+        if ($request->user_id != NULL){
+            $transaction->user_id = $request->user_id;
         }
 
         $transaction->save();

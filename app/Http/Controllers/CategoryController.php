@@ -41,9 +41,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->type = $request->type;
         $category->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($category);
     }
 
     /**

@@ -40,9 +40,7 @@ class RolController extends Controller
         $rol = new Rol();
         $rol->type = $request->type;
         $rol->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($rol);
     }
 
     /**

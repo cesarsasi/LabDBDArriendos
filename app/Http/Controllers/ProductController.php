@@ -40,10 +40,9 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->availability = $request->availability;
+        $product->publication_id = $request->publication_id;
         $product->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($product);
     }
 
     /**
@@ -85,6 +84,9 @@ class ProductController extends Controller
         }
         if ($request->availability != NULL){
             $product->availability = $request->availability;
+        }
+        if ($request->publication_id != NULL){
+            $product->publication_id = $request->publication_id;
         }
 
         $product->save();

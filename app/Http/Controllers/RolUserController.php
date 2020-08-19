@@ -37,7 +37,11 @@ class RolUserController extends Controller
      */
     public function store(Request $request)
     {
-        // No se como se hace si no tiene mas que solo foreankey *************************** Revisar
+        $rolUser = new RolUser();
+        $rolUser->rol_id = $request->rol_id;
+        $rolUser->user_id = $request->user_id;
+        $rolUser->save();
+        return response()->json($rolUser);
     }
 
     /**
@@ -72,7 +76,17 @@ class RolUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //No se como se hace si no tiene mas que solo foreankey *************************** Revisar
+        $rolUser = RolUser::find($id);
+
+        if ($request->rol_id != NULL){
+            $rolUser->rol_id = $request->rol_id;
+        }
+        if ($request->user_id != NULL){
+            $rolUser->user_id = $request->user_id;
+        }
+
+        $rolUser->save();
+        return response()->json($rolUser);
     }
 
     /**

@@ -41,10 +41,11 @@ class PublicationController extends Controller
         $publication->description = $request->description;
         $publication->price = $request->price;
         $publication->stock = $request->stock;
+        $publication->category_id = $request->category_id;
+        $publication->locate_id = $request->locate_id;
+        $publication->user_id = $request->user_id;
         $publication->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($publication);
     }
 
     /**
@@ -89,6 +90,15 @@ class PublicationController extends Controller
         }
         if ($request->stock != NULL){
             $publication->stock = $request->stock;
+        }
+        if ($request->category_id != NULL){
+            $publication->category_id = $request->category_id;
+        }
+        if ($request->locate_id != NULL){
+            $publication->locate_id = $request->locate_id;
+        }
+        if ($request->user_id != NULL){
+            $publication->user_id = $request->user_id;
         }
 
         $publication->save();

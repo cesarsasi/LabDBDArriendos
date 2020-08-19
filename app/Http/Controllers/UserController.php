@@ -44,9 +44,7 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->description = $request->description;
         $user->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($user);
     }
 
     /**

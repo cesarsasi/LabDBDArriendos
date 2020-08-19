@@ -42,9 +42,7 @@ class LocationController extends Controller
         $location->commune = $request->commune;
         $location->street = $request->street;
         $location->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($location);
     }
 
     /**

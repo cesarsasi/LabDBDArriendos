@@ -41,10 +41,10 @@ class AssessmentController extends Controller
         $assessment->score = $request->score;
         $assessment->date = $request->date;
         $assessment->comment = $request->comment;
+        $assessment->publication_id = $request->publication_id;
+        $assessment->purchase_id = $request->purchase_id;
         $assessment->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+        return response()->json($assessment);
     }
 
     /**
@@ -89,6 +89,12 @@ class AssessmentController extends Controller
         }
         if ($request->comment != NULL){
             $assessment->comment = $request->comment;
+        }
+        if ($request->publication_id != NULL){
+            $assessment->publication_id = $request->publication_id;
+        }
+        if ($request->purchase_id != NULL){
+            $assessment->purchase_id = $request->purchase_id;
         }
 
         $assessment->save();
