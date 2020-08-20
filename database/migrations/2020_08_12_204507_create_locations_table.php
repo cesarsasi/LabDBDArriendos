@@ -17,7 +17,7 @@ class CreateLocationsTable extends Migration
             $table->id('id');
             $table->string('region', "20");
             $table->string('commune', "20");
-            $table->string('street', "20");
+            $table->string('street', "50");
             
             $table->timestamps();
         });
