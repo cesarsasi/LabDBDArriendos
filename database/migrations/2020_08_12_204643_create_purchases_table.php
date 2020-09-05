@@ -24,6 +24,7 @@ class CreatePurchasesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('publication_id');
             $table->foreign('publication_id')->references('id')->on('publications');
+            $table->boolean('active');
             $table->timestamps();
         });
     }

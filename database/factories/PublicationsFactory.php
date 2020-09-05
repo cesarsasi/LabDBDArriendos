@@ -17,5 +17,6 @@ $factory->define(Publication::class, function (Faker $faker) {
         'category_id' => $faker->randomElement($category_id),
         'locate_id' => $faker->randomElement($locate_id),
         'user_id' => $faker->randomElement($user_id),
+        'active' => 'true',
     ];
 });

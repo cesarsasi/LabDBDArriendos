@@ -16,6 +16,6 @@ $factory->define(Purchase::class, function (Faker $faker) {
         'deadline' => $faker->date,
         'user_id' => $faker->randomElement($user_id),
         'publication_id' => $faker->randomElement($publication_id),
-
+        'active' => 'true',
     ];
 });

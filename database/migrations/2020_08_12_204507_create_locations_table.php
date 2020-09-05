@@ -18,7 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('region', "20");
             $table->string('commune', "20");
             $table->string('street', "50");
-            
+            $table->boolean('active');
             $table->timestamps();
         });
     }

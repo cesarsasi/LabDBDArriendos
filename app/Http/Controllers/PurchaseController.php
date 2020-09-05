@@ -20,16 +20,6 @@ class PurchaseController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,6 +27,14 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'paymentMethod' => 'required',
+            'card' => 'required',
+            'startdate' => 'required|date',
+            'finishdate' => 'required|date',
+            'deadline' => 'required|date',
+        ]);
+
         $purchase = new Purchase();
         $purchase->paymentMethod = $request->paymentMethod;
         $purchase->card = $request->card;
@@ -45,6 +43,7 @@ class PurchaseController extends Controller
         $purchase->deadline = $request->deadline;
         $purchase->user_id = $request->user_id;
         $purchase->publication_id = $request->publication_id;
+        $purchase->active = 'true';
         $purchase->save();
         return response()->json($purchase);
     }
@@ -59,17 +58,6 @@ class PurchaseController extends Controller
     {
         $purchase = Purchase::find($id);
         return $purchase;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -121,4 +109,12 @@ class PurchaseController extends Controller
         $purchase->delete();
         return "La compra fue eliminada";
     }
+
+    public function delete($id)
+    {
+        $purchase = Purchase::find($id);
+        $purchase->active = 'false';
+        $purchase->save();
+        return response()->json($purchase);
+    } 
 }

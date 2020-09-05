@@ -37,10 +37,16 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'region' => 'required|max:20',
+            'commune' => 'required|max:20',
+            'street' => 'required|max:50',
+        ]);
         $location = new Location();
         $location->region = $request->region;
         $location->commune = $request->commune;
         $location->street = $request->street;
+        $location->active = 'true';
         $location->save();
         return response()->json($location);
     }
@@ -105,4 +111,12 @@ class LocationController extends Controller
         $location->delete();
         return "La localizacion fue eliminada";
     }
+
+    public function delete($id)
+    {
+        $location = Location::find($id);
+        $location->active = 'false';
+        $location->save();
+        return response()->json($location);
+    } 
 }

@@ -24,6 +24,7 @@ class CreatePublicationsTable extends Migration
             $table->foreign('locate_id')->references('id')->on('locations');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->boolean('active');
             $table->timestamps();
         });
     }

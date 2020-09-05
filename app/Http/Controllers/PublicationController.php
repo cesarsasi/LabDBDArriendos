@@ -37,6 +37,12 @@ class PublicationController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'description' => 'required|max:500',
+            'price' => 'required',
+            'stock' => 'required',
+        ]);
+
         $publication = new Publication();
         $publication->description = $request->description;
         $publication->price = $request->price;
@@ -44,6 +50,7 @@ class PublicationController extends Controller
         $publication->category_id = $request->category_id;
         $publication->locate_id = $request->locate_id;
         $publication->user_id = $request->user_id;
+        $publication->active = 'true';
         $publication->save();
         return response()->json($publication);
     }
@@ -117,4 +124,12 @@ class PublicationController extends Controller
         $publication->delete();
         return "La publicacion fue eliminada";
     }
+
+    public function delete($id)
+    {
+        $publication = Publication::find($id);
+        $publication->active = 'false';
+        $publication->save();
+        return response()->json($publication);
+    } 
 }

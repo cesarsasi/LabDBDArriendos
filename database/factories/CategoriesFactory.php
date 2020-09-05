@@ -9,5 +9,6 @@ $factory->define(Category::class, function (Faker $faker) {
     return [
         'name' => $faker->randomElement($array = array('Inmobiliaria', 'Muebles', 'Artículos', 'Herramientas', 'Espacios', 'Vehículos', 'Eventos')),
         'type' => $faker->word,
+        'active' => 'true',
     ];
 });

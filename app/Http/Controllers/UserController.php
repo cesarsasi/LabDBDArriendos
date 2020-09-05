@@ -20,16 +20,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,12 +27,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:20',
+            'lastname' => 'required|max:20',
+            'email' => 'required|unique:users',
+            'password' => 'required',
+            'description' => 'required',
+        ]);
         $user = new User();
         $user->name = $request->name;
         $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->description = $request->description;
+        $user->active = 'true';
         $user->save();
         return response()->json($user);
     }
@@ -57,17 +55,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         return $user;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -113,4 +100,12 @@ class UserController extends Controller
         $user->delete();
         return "El usuario fue eliminado";
     }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+        $user->active = 'false';
+        $user->save();
+        return response()->json($user);
+    }    
 }

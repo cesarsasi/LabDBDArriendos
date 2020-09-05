@@ -37,9 +37,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:20',
+            'type' => 'required|max:20',
+        ]);
         $category = new Category();
         $category->name = $request->name;
         $category->type = $request->type;
+        $category->active = 'true';
         $category->save();
         return response()->json($category);
     }
@@ -101,4 +106,12 @@ class CategoryController extends Controller
         $category->delete();
         return "La categoria fue eliminada";
     }
+
+    public function delete($id)
+    {
+        $category = Category::find($id);
+        $category->active = 'false';
+        $category->save();
+        return response()->json($category);
+    } 
 }
