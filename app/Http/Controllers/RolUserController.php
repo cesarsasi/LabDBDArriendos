@@ -36,10 +36,11 @@ class RolUserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $rolUser = new RolUser();
         $rolUser->rol_id = $request->rol_id;
         $rolUser->user_id = $request->user_id;
+        $rolUser->active = 'true';
         $rolUser->save();
         return response()->json($rolUser);
     }
@@ -101,4 +102,12 @@ class RolUserController extends Controller
         $rolUser->delete();
         return "El rolUsuario fue eliminado";
     }
+
+    public function delete($id)
+    {
+        $rolUser = User::find($id);
+        $rolUser->active = 'false';
+        $rolUser->save();
+        return response()->json($rolUser);
+    } 
 }

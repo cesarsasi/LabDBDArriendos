@@ -11,5 +11,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $faker->word,
         'availability' => $faker->numberBetween($min = 0, $max = 1),
         'publication_id' => $faker->randomElement($publication_id),
+        'active' => 'true',
     ];
 });

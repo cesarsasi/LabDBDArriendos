@@ -11,5 +11,6 @@ $factory->define(RolUser::class, function (Faker $faker) {
     return [
         'rol_id' => $faker->randomElement($rol_id),
         'user_id' => $faker->randomElement($user_id),
+        'active' => 'true',
     ];
 });

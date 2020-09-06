@@ -18,6 +18,7 @@ class CreateAssessmentsTable extends Migration
             $table->smallInteger('score');
             $table->date('date');
             $table->string('comment', "500");
+            $table->boolean('active');
             $table->timestamps();
             $table->unsignedBigInteger('publication_id');
             $table->foreign('publication_id')->references('id')->on('publications');

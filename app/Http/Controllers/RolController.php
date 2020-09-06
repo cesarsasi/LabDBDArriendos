@@ -36,9 +36,13 @@ class RolController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $validatedData = $request->validate([
+            'type' => 'required',
+        ]);
         $rol = new Rol();
         $rol->type = $request->type;
+        $rol->active = 'true'
         $rol->save();
         return response()->json($rol);
     }
@@ -97,4 +101,11 @@ class RolController extends Controller
         $rol->delete();
         return "El rol fue eliminado";
     }
+    public function delete($id)
+    {
+        $rol = User::find($id);
+        $rol->active = 'false';
+        $rol->save();
+        return response()->json($rol);
+    } 
 }

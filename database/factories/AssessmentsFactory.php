@@ -15,5 +15,6 @@ $factory->define(Assessment::class, function (Faker $faker) {
         'comment' => $faker->text($maxNbChars = 500),
         'publication_id' => $faker->randomElement($publication_id),
         'purchase_id' => $faker->randomElement($purchase_id),
+        'active' => 'true',
     ];
 });

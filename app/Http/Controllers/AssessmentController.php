@@ -37,12 +37,18 @@ class AssessmentController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'score' => 'required',
+            'date' => 'required|date',
+            'comment' => 'required|max:500',
+        ]);   
         $assessment = new Assessment();
         $assessment->score = $request->score;
         $assessment->date = $request->date;
         $assessment->comment = $request->comment;
         $assessment->publication_id = $request->publication_id;
         $assessment->purchase_id = $request->purchase_id;
+        $assessment->active = 'true';
         $assessment->save();
         return response()->json($assessment);
     }
@@ -113,4 +119,12 @@ class AssessmentController extends Controller
         $assessment->delete();
         return "La evaluacion fue eliminada";
     }
+
+    public function delete($id)
+    {
+        $assessment = Publication::find($id);
+        $assessment->active = 'false';
+        $assessment->save();
+        return response()->json($assessment);
+    } 
 }

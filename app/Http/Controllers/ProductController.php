@@ -37,10 +37,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|max:20',
+            'availability' => 'required',
+        ]);
         $product = new Product();
         $product->name = $request->name;
         $product->availability = $request->availability;
         $product->publication_id = $request->publication_id;
+        $product->active = 'true';
         $product->save();
         return response()->json($product);
     }
@@ -105,4 +110,12 @@ class ProductController extends Controller
         $product->delete();
         return "El producto fue eliminado";
     }
+
+    public function delete($id)
+    {
+        $product = Purchase::find($id);
+        $product->active = 'false';
+        $product->save();
+        return response()->json($product);
+    } 
 }

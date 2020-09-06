@@ -11,5 +11,6 @@ $factory->define(Transaction::class, function (Faker $faker) {
         'paymentMethod' => $faker->numberBetween($min=1, $max=4),
         'card' => $faker->creditCardNumber,
         'user_id' => $faker->randomElement($user_id),
+        'active' => 'true',
     ];
 });

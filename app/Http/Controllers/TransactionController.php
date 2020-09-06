@@ -37,10 +37,15 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'paymentMethod' => 'required',
+            'card' => 'required',
+        ]);
         $transaction = new Transaction();
         $transaction->paymentMethod = $request->paymentMethod;
         $transaction->card = $request->card;
         $transaction->user_id = $request->user_id;
+        $transaction->active = 'true';
         $transaction->save();
         return response()->json($transaction);
     }
@@ -105,4 +110,12 @@ class TransactionController extends Controller
         $transaction->delete();
         return "La transaccion fue eliminada";
     }
+    
+    public function delete($id)
+    {
+        $transaction = Purchase::find($id);
+        $transaction->active = 'false';
+        $transaction->save();
+        return response()->json($transaction);
+    } 
 }

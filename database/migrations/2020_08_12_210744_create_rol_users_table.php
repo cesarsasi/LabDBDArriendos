@@ -19,6 +19,7 @@ class CreateRolUsersTable extends Migration
             $table->unsignedBigInteger('rol_id');
             $table->foreign('rol_id')->references('id')->on('rols');
             $table->unsignedBigInteger('user_id');
+            $table->boolean('active');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
