@@ -105,7 +105,7 @@ class RolUserController extends Controller
 
     public function delete($id)
     {
-        $rolUser = User::find($id);
+        $rolUser = RolUser::find($id);
         $rolUser->active = 'false';
         $rolUser->save();
         return response()->json($rolUser);

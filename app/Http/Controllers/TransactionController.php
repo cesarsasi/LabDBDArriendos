@@ -113,7 +113,7 @@ class TransactionController extends Controller
     
     public function delete($id)
     {
-        $transaction = Purchase::find($id);
+        $transaction = Transaction::find($id);
         $transaction->active = 'false';
         $transaction->save();
         return response()->json($transaction);

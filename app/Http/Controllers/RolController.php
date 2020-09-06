@@ -42,7 +42,7 @@ class RolController extends Controller
         ]);
         $rol = new Rol();
         $rol->type = $request->type;
-        $rol->active = 'true'
+        $rol->active = 'true';
         $rol->save();
         return response()->json($rol);
     }
@@ -103,7 +103,7 @@ class RolController extends Controller
     }
     public function delete($id)
     {
-        $rol = User::find($id);
+        $rol = Rol::find($id);
         $rol->active = 'false';
         $rol->save();
         return response()->json($rol);

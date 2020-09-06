@@ -122,7 +122,7 @@ class AssessmentController extends Controller
 
     public function delete($id)
     {
-        $assessment = Publication::find($id);
+        $assessment = Assessment::find($id);
         $assessment->active = 'false';
         $assessment->save();
         return response()->json($assessment);

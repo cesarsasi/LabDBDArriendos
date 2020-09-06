@@ -113,7 +113,7 @@ class ProductController extends Controller
 
     public function delete($id)
     {
-        $product = Purchase::find($id);
+        $product = Product::find($id);
         $product->active = 'false';
         $product->save();
         return response()->json($product);
