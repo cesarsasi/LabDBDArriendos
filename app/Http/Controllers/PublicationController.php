@@ -13,10 +13,10 @@ class PublicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $publication = Publication::all();
-        return response()->json($publication);
+        return $publication;
     }
 
     /**

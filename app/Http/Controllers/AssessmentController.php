@@ -13,10 +13,10 @@ class AssessmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $assessment = Assessment::all();
-        return response()->json($assessment);
+        return $assessment;
     }
 
     /**

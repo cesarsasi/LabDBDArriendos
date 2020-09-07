@@ -13,10 +13,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $product = Product::all();
-        return response()->json($product);
+        return $product;
     }
 
     /**

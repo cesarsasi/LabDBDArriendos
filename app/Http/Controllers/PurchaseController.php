@@ -13,10 +13,10 @@ class PurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $purchase = Purchase::all();
-        return response()->json($purchase);
+        return $purchase;
     }
 
     /**

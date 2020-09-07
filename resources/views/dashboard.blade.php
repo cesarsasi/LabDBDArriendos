@@ -66,7 +66,7 @@
             </p>
             <div class="collapse" id="collapseExample2">
               <div class="card card-body">
-                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabProd()">Visualizar tabla</a>
+                <a id = "hideShowTabProd" class="nav-link active" onclick="ShowHideTabProd()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -79,7 +79,7 @@
             </p>
             <div class="collapse" id="collapseExample3">
               <div class="card card-body">
-                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabPub()">Visualizar tabla</a>
+                <a id = "hideShowTabPubl" class="nav-link active" onclick="ShowHideTabPub()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -105,7 +105,7 @@
             </p>
             <div class="collapse" id="collapseExample5">
               <div class="card card-body">
-                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabVal()">Visualizar tabla</a>
+                <a id = "hideShowTabAssess" class="nav-link active" onclick="ShowHideTabVal()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -118,7 +118,7 @@
             </p>
             <div class="collapse" id="collapseExample6">
               <div class="card card-body">
-                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabComp()">Visualizar tabla</a>
+                <a id = "hideShowTabPurch" class="nav-link active" onclick="ShowHideTabComp()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -182,6 +182,18 @@
     <div id="tabUser" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-tab-user/>
     </div>
+    <div id="tabAssessment" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-assess/>
+    </div>
+    <div id="tabProd" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-prod/>
+    </div>
+    <div id="tabPubl" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-publ/>
+    </div>
+    <div id="tabPurch" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-purch/>
+    </div>
   </div>
 </div>
 <script
@@ -198,6 +210,10 @@
   $("#tabRol").hide();
   $("#tabTrans").hide();
   $("#tabUser").hide();
+  $("#tabAssessment").hide();
+  $("#tabProd").hide();
+  $("#tabPubl").hide();
+  $("#tabPurch").hide();
   function ShowHideTabCat(){
     let text = "";
     if($("#hideShowTabCat").text() === "Visualizar tabla"){
@@ -257,6 +273,54 @@
     }
     
     $("#hideShowTabUser").html(text);
+  }
+  function ShowHideTabVal(){
+    let text = "";
+    if($("#hideShowTabAssess").text() === "Visualizar tabla"){
+      $("#tabAssessment").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabAssessment").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabAssess").html(text);
+  }
+  function ShowHideTabProd(){
+    let text = "";
+    if($("#hideShowTabProd").text() === "Visualizar tabla"){
+      $("#tabProd").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabProd").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabProd").html(text);
+  }
+  function ShowHideTabPub(){
+    let text = "";
+    if($("#hideShowTabPubl").text() === "Visualizar tabla"){
+      $("#tabPubl").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabPubl").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabPubl").html(text);
+  }
+  function ShowHideTabComp(){
+    let text = "";
+    if($("#hideShowTabPurch").text() === "Visualizar tabla"){
+      $("#tabPurch").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabPurch").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabPurch").html(text);
   }
 </script>
 
