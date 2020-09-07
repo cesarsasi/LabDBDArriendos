@@ -26,8 +26,6 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="../sass/dashboard.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -55,9 +53,7 @@
             </p>
             <div class="collapse" id="collapseExample1">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabCat" class="nav-link active" onclick="ShowHideTabCat()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -70,9 +66,7 @@
             </p>
             <div class="collapse" id="collapseExample2">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabProd()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -85,9 +79,7 @@
             </p>
             <div class="collapse" id="collapseExample3">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabPub()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -100,9 +92,7 @@
             </p>
             <div class="collapse" id="collapseExample4">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabLocat" class="nav-link active" onclick="ShowHideTabLocat()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -115,9 +105,7 @@
             </p>
             <div class="collapse" id="collapseExample5">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabVal()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -130,9 +118,7 @@
             </p>
             <div class="collapse" id="collapseExample6">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabComp()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -145,9 +131,7 @@
             </p>
             <div class="collapse" id="collapseExample7">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabUser" class="nav-link active" onclick="ShowHideTabUser()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -155,14 +139,12 @@
           </li>
           <li class="nav-item">
             <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
-                Tabla Transacciòn
+            Tabla Transacción
             </a>
             </p>
             <div class="collapse" id="collapseExample8">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabTrans()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -170,14 +152,12 @@
           </li>
           <li class="nav-item">
             <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
-                Tabla Roles
+            Tabla Roles
             </a>
             </p>
             <div class="collapse" id="collapseExample9">
               <div class="card card-body">
-                <a class="nav-link active" href="#">
-                Visualizar tabla 
-                </a>
+                <a id = "hideShowTabRol" class="nav-link active" onclick="ShowHideTabRol()">Visualizar tabla</a>
                 <a class="nav-link active" href="#">
                 Editar tupla de datos
                 </a>
@@ -187,155 +167,96 @@
       </div>
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
-        </div>
-      </div>
-
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-      <h2>Section title</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>Lorem</td>
-              <td>ipsum</td>
-              <td>dolor</td>
-              <td>sit</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>amet</td>
-              <td>consectetur</td>
-              <td>adipiscing</td>
-              <td>elit</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>Integer</td>
-              <td>nec</td>
-              <td>odio</td>
-              <td>Praesent</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>libero</td>
-              <td>Sed</td>
-              <td>cursus</td>
-              <td>ante</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>dapibus</td>
-              <td>diam</td>
-              <td>Sed</td>
-              <td>nisi</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>Nulla</td>
-              <td>quis</td>
-              <td>sem</td>
-              <td>at</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>nibh</td>
-              <td>elementum</td>
-              <td>imperdiet</td>
-              <td>Duis</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>sagittis</td>
-              <td>ipsum</td>
-              <td>Praesent</td>
-              <td>mauris</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>Fusce</td>
-              <td>nec</td>
-              <td>tellus</td>
-              <td>sed</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>augue</td>
-              <td>semper</td>
-              <td>porta</td>
-              <td>Mauris</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>massa</td>
-              <td>Vestibulum</td>
-              <td>lacinia</td>
-              <td>arcu</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>eget</td>
-              <td>nulla</td>
-              <td>Class</td>
-              <td>aptent</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>taciti</td>
-              <td>sociosqu</td>
-              <td>ad</td>
-              <td>litora</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>torquent</td>
-              <td>per</td>
-              <td>conubia</td>
-              <td>nostra</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>per</td>
-              <td>inceptos</td>
-              <td>himenaeos</td>
-              <td>Curabitur</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>sodales</td>
-              <td>ligula</td>
-              <td>in</td>
-              <td>libero</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
+    <div id="tabCat" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-cat/>
+    </div>
+    <div id="tabLocat" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-locat/>
+    </div>
+    <div id="tabRol" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-rol/>
+    </div>
+    <div id="tabTrans" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-trans/>
+    </div>
+    <div id="tabUser" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-user/>
+    </div>
   </div>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </html>
+<script type="text/javascript">
+  $("#tabCat").hide();
+  $("#tabLocat").hide();
+  $("#tabRol").hide();
+  $("#tabTrans").hide();
+  $("#tabUser").hide();
+  function ShowHideTabCat(){
+    let text = "";
+    if($("#hideShowTabCat").text() === "Visualizar tabla"){
+      $("#tabCat").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabCat").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabCat").html(text);
+  }
+  function ShowHideTabLocat(){
+    let text = "";
+    if($("#hideShowTabLocat").text() === "Visualizar tabla"){
+      $("#tabLocat").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabLocat").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabLocat").html(text);
+  }
+  function ShowHideTabRol(){
+    let text = "";
+    if($("#hideShowTabRol").text() === "Visualizar tabla"){
+      $("#tabRol").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabRol").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabRol").html(text);
+  }
+  function ShowHideTabTrans(){
+    let text = "";
+    if($("#hideShowTabTans").text() === "Visualizar tabla"){
+      $("#tabTrans").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabTrans").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabTans").html(text);
+  }
+  function ShowHideTabUser(){
+    let text = "";
+    if($("#hideShowTabUser").text() === "Visualizar tabla"){
+      $("#tabUser").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabUser").hide();
+      text = "Visualizar tabla"
+    }
+    
+    $("#hideShowTabUser").html(text);
+  }
+</script>
+
