@@ -54,9 +54,7 @@
             <div class="collapse" id="collapseExample1">
               <div class="card card-body">
                 <a id = "hideShowTabCat" class="nav-link active" onclick="ShowHideTabCat()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormCat" class="nav-link active" onclick="ShowHideFormCat()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -67,9 +65,7 @@
             <div class="collapse" id="collapseExample2">
               <div class="card card-body">
                 <a id = "hideShowTabProd" class="nav-link active" onclick="ShowHideTabProd()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormProd" class="nav-link active" onclick="ShowHideFormProd()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -80,9 +76,7 @@
             <div class="collapse" id="collapseExample3">
               <div class="card card-body">
                 <a id = "hideShowTabPubl" class="nav-link active" onclick="ShowHideTabPub()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormPubl" class="nav-link active" onclick="ShowHideFormPub()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -93,9 +87,7 @@
             <div class="collapse" id="collapseExample4">
               <div class="card card-body">
                 <a id = "hideShowTabLocat" class="nav-link active" onclick="ShowHideTabLocat()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormLocat" class="nav-link active" onclick="ShowHideFormLocat()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -106,9 +98,7 @@
             <div class="collapse" id="collapseExample5">
               <div class="card card-body">
                 <a id = "hideShowTabAssess" class="nav-link active" onclick="ShowHideTabVal()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormAssess" class="nav-link active" onclick="ShowHideFormVal()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -119,9 +109,7 @@
             <div class="collapse" id="collapseExample6">
               <div class="card card-body">
                 <a id = "hideShowTabPurch" class="nav-link active" onclick="ShowHideTabComp()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormPurch" class="nav-link active" onclick="ShowHideFormComp()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -132,9 +120,7 @@
             <div class="collapse" id="collapseExample7">
               <div class="card card-body">
                 <a id = "hideShowTabUser" class="nav-link active" onclick="ShowHideTabUser()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormUser" class="nav-link active" onclick="ShowHideFormUser()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -145,9 +131,7 @@
             <div class="collapse" id="collapseExample8">
               <div class="card card-body">
                 <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabTrans()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowformTans" class="nav-link active" onclick="ShowHideFormTrans()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -158,9 +142,7 @@
             <div class="collapse" id="collapseExample9">
               <div class="card card-body">
                 <a id = "hideShowTabRol" class="nav-link active" onclick="ShowHideTabRol()">Visualizar tabla</a>
-                <a class="nav-link active" href="#">
-                Editar tupla de datos
-                </a>
+                <a id = "hideShowFormRol" class="nav-link active" onclick="ShowHideFormRol()">Editar tupla de datos</a>
               </div>
           </li>
         </ul>
@@ -194,6 +176,21 @@
     <div id="tabPurch" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-tab-purch/>
     </div>
+    <div id="formCat" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-cat/>
+    </div>
+    <div id="formLocat" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-loc/>
+    </div>
+    <div id="formUser" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-user/>
+    </div>
+    <div id="formPubl" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-pub/>
+    <div id="formPurch" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-purs/>
+    </div> 
+    </div>
   </div>
 </div>
 <script
@@ -214,6 +211,13 @@
   $("#tabProd").hide();
   $("#tabPubl").hide();
   $("#tabPurch").hide();
+
+  $("#formCat").hide();
+  $("#formLocat").hide();
+  $("#formUser").hide();
+  $("#formPubl").hide();
+  $("#formPurch").hide();
+
   function ShowHideTabCat(){
     let text = "";
     if($("#hideShowTabCat").text() === "Visualizar tabla"){
@@ -223,10 +227,8 @@
       $("#tabCat").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabCat").html(text);
   };
-  
   function ShowHideTabLocat(){
     let text = "";
     if($("#hideShowTabLocat").text() === "Visualizar tabla"){
@@ -236,10 +238,8 @@
       $("#tabLocat").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabLocat").html(text);
   };
-
   function ShowHideTabRol(){
     let text = "";
     if($("#hideShowTabRol").text() === "Visualizar tabla"){
@@ -249,10 +249,8 @@
       $("#tabRol").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabRol").html(text);
   };
-
   function ShowHideTabTrans(){
     let text = "";
     if($("#hideShowTabTans").text() === "Visualizar tabla"){
@@ -262,10 +260,8 @@
       $("#tabTrans").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabTans").html(text);
   };
-
   function ShowHideTabUser(){
     let text = "";
     if($("#hideShowTabUser").text() === "Visualizar tabla"){
@@ -275,10 +271,8 @@
       $("#tabUser").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabUser").html(text);
   };
-
   function ShowHideTabVal(){
     let text = "";
     if($("#hideShowTabAssess").text() === "Visualizar tabla"){
@@ -288,10 +282,8 @@
       $("#tabAssessment").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabAssess").html(text);
   };
-
   function ShowHideTabProd(){
     let text = "";
     if($("#hideShowTabProd").text() === "Visualizar tabla"){
@@ -304,7 +296,6 @@
     
     $("#hideShowTabProd").html(text);
   };
-
   function ShowHideTabPub(){
     let text = "";
     if($("#hideShowTabPubl").text() === "Visualizar tabla"){
@@ -317,7 +308,6 @@
     
     $("#hideShowTabPubl").html(text);
   };
-
   function ShowHideTabComp(){
     let text = "";
     if($("#hideShowTabPurch").text() === "Visualizar tabla"){
@@ -327,8 +317,64 @@
       $("#tabPurch").hide();
       text = "Visualizar tabla"
     }
-    
     $("#hideShowTabPurch").html(text);
-  }
+  };
+
+  function ShowHideFormCat(){
+    let text = "";
+    if($("#hideShowFormCat").text() === "Editar tupla de datos"){
+      $("#formCat").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formCat").hide();
+      text = "Cerrar Edición"
+    }
+    
+    $("#hideShowFormCat").html(text);
+  };
+  function ShowHideFormLocat(){
+    let text = "";
+    if($("#hideShowFormLocat").text() === "Editar tupla de datos"){
+      $("#formLocat").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formLocat").hide();
+      text = "Cerrar Edición"
+    }
+    $("#hideShowFormLocat").html(text);
+  };
+  function ShowHideFormUser(){
+    let text = "";
+    if($("#hideShowFormUser").text() === "Editar tupla de datos"){
+      $("#formUser").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formUser").hide();
+      text = "Cerrar Edición"
+    }
+    $("#hideShowFormUser").html(text);
+  };
+  function ShowHideFormPub(){
+    let text = "";
+    if($("#hideShowFormPubl").text() === "Editar tupla de datos"){
+      $("#formPubl").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formPubl").hide();
+      text = "Cerrar Edición"
+    }
+    $("#hideShowFormPubl").html(text);
+  };
+  function ShowHideFormComp(){
+    let text = "";
+    if($("#hideShowFormPurch").text() === "Editar tupla de datos"){
+      $("#formPurch").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formPurch").hide();
+      text = "Cerrar Edición"
+    }
+    $("#hideShowFormPurch").html(text);
+  };
 </script>
 
