@@ -13,10 +13,10 @@ class RolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $rol = Rol::all();
-        return response()->json($rol);
+        return $rol;
     }
 
     /**

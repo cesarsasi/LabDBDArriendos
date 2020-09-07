@@ -13,10 +13,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $category = Category::all();
-        return response()->json($category);
+        return $category;
     }
 
     /**

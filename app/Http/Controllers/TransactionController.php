@@ -13,10 +13,10 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $transaction = Transaction::all();
-        return response()->json($transaction);
+        return $transaction;
     }
 
     /**

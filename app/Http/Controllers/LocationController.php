@@ -13,10 +13,10 @@ class LocationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $location = Location::all();
-        return response()->json($location);
+        return $location;
     }
 
     /**

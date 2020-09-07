@@ -225,7 +225,8 @@
     }
     
     $("#hideShowTabCat").html(text);
-  }
+  };
+  
   function ShowHideTabLocat(){
     let text = "";
     if($("#hideShowTabLocat").text() === "Visualizar tabla"){
@@ -237,7 +238,8 @@
     }
     
     $("#hideShowTabLocat").html(text);
-  }
+  };
+
   function ShowHideTabRol(){
     let text = "";
     if($("#hideShowTabRol").text() === "Visualizar tabla"){
@@ -249,7 +251,8 @@
     }
     
     $("#hideShowTabRol").html(text);
-  }
+  };
+
   function ShowHideTabTrans(){
     let text = "";
     if($("#hideShowTabTans").text() === "Visualizar tabla"){
@@ -261,7 +264,8 @@
     }
     
     $("#hideShowTabTans").html(text);
-  }
+  };
+
   function ShowHideTabUser(){
     let text = "";
     if($("#hideShowTabUser").text() === "Visualizar tabla"){
@@ -273,7 +277,8 @@
     }
     
     $("#hideShowTabUser").html(text);
-  }
+  };
+
   function ShowHideTabVal(){
     let text = "";
     if($("#hideShowTabAssess").text() === "Visualizar tabla"){
@@ -285,7 +290,8 @@
     }
     
     $("#hideShowTabAssess").html(text);
-  }
+  };
+
   function ShowHideTabProd(){
     let text = "";
     if($("#hideShowTabProd").text() === "Visualizar tabla"){
@@ -297,7 +303,8 @@
     }
     
     $("#hideShowTabProd").html(text);
-  }
+  };
+
   function ShowHideTabPub(){
     let text = "";
     if($("#hideShowTabPubl").text() === "Visualizar tabla"){
@@ -309,7 +316,8 @@
     }
     
     $("#hideShowTabPubl").html(text);
-  }
+  };
+
   function ShowHideTabComp(){
     let text = "";
     if($("#hideShowTabPurch").text() === "Visualizar tabla"){

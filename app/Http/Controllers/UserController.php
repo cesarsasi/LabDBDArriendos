@@ -13,10 +13,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         $user = User::all();
-        return response()->json($user);
+        return $user;
     }
 
     /**
