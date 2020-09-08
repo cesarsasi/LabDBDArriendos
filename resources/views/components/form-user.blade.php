@@ -24,42 +24,49 @@
   
 <div class="formPurch">
   <h2>Modificar Usuario</h2>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
   <input type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Nombre</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nuevo Nombre" aria-label="name" aria-describedby="basic-addon2">
+  <input type="text" maxlength="20" class="form-control" placeholder="Nuevo Nombre" aria-label="name" aria-describedby="basic-addon2">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Apellido</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nuevo Apellido" aria-label="lastname" aria-describedby="basic-addon3">
+  <input type="text" maxlength="20" class="form-control" placeholder="Nuevo Apellido" aria-label="lastname" aria-describedby="basic-addon3">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon4">Email</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nuevo Email" aria-label="mail" aria-describedby="basic-addon4">
+  <input type="email" maxlength="20" class="form-control" placeholder="Nuevo Email" aria-label="email" aria-describedby="basic-addon4">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon5">Contraseña</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nueva Contraseña" aria-label="pass" aria-describedby="basic-addon5">
+  <input type="password" maxlength="500" class="form-control" placeholder="Nueva Contraseña" aria-label="pass" aria-describedby="basic-addon5">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon6">Descripción</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nueva Descripción" aria-label="descrip" aria-describedby="basic-addon6">
+  <input type="text" maxlength="500" class="form-control" placeholder="Nueva Descripción" aria-label="descrip" aria-describedby="basic-addon6">
 </div>
+
 <button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
 </div>
 </div>

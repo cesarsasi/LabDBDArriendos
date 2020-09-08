@@ -130,8 +130,8 @@
             </p>
             <div class="collapse" id="collapseExample8">
               <div class="card card-body">
-                <a id = "hideShowTabTans" class="nav-link active" onclick="ShowHideTabTrans()">Visualizar tabla</a>
-                <a id = "hideShowformTans" class="nav-link active" onclick="ShowHideFormTrans()">Editar tupla de datos</a>
+                <a id = "hideShowTabTrans" class="nav-link active" onclick="ShowHideTabTrans()">Visualizar tabla</a>
+                <a id = "hideShowFormTrans" class="nav-link active" onclick="ShowHideFormTrans()">Editar tupla de datos</a>
               </div>
           </li>
           <li class="nav-item">
@@ -191,6 +191,18 @@
     <div id="formPurch" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-form-purch/>
     </div>
+    <div id="formAssess" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-assess/>
+    </div>
+    <div id="formProd" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-prod/>
+    </div>
+    <div id="formRol" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-rol/>
+    </div>
+    <div id="formTrans" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-trans/>
+    </div>
 
     </div>
   </div>
@@ -219,6 +231,10 @@
   $("#formUser").hide();
   $("#formPubl").hide();
   $("#formPurch").hide();
+  $("#formAssess").hide();
+  $("#formProd").hide();
+  $("#formRol").hide();
+  $("#formTrans").hide();
 
   function ShowHideTabCat(){
     let text = "";
@@ -255,14 +271,14 @@
   };
   function ShowHideTabTrans(){
     let text = "";
-    if($("#hideShowTabTans").text() === "Visualizar tabla"){
+    if($("#hideShowTabTrans").text() === "Visualizar tabla"){
       $("#tabTrans").show();
       text = "Ocultar tabla";
     }else{
       $("#tabTrans").hide();
       text = "Visualizar tabla";
     }
-    $("#hideShowTabTans").html(text);
+    $("#hideShowTabTrans").html(text);
   };
   function ShowHideTabUser(){
     let text = "";
@@ -377,6 +393,50 @@
       text = "Editar tupla de datos";
     }
     $("#hideShowFormPurch").html(text);
+  };
+  function ShowHideFormProd(){
+    let text = "";
+    if($("#hideShowFormProd").text() === "Editar tupla de datos"){
+      $("#formProd").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formProd").hide();
+      text = "Editar tupla de datos";
+    }
+    $("#hideShowFormProd").html(text);
+  };
+  function ShowHideFormVal(){
+    let text = "";
+    if($("#hideShowFormAssess").text() === "Editar tupla de datos"){
+      $("#formAssess").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formAssess").hide();
+      text = "Editar tupla de datos";
+    }
+    $("#hideShowFormAssess").html(text);
+  };
+  function ShowHideFormRol(){
+    let text = "";
+    if($("#hideShowFormRol").text() === "Editar tupla de datos"){
+      $("#formRol").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formRol").hide();
+      text = "Editar tupla de datos";
+    }
+    $("#hideShowFormRol").html(text);
+  };
+  function ShowHideFormTrans(){
+    let text = "";
+    if($("#hideShowFormTrans").text() === "Editar tupla de datos"){
+      $("#formTrans").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formTrans").hide();
+      text = "Editar tupla de datos";
+    }
+    $("#hideShowFormTrans").html(text);
   };
 
 </script>

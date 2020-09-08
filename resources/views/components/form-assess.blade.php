@@ -21,8 +21,9 @@
 	    </button>
 	  </div>
 	</div>
-<div class="formPubl">
-	<h2>Modificar Publicación</h2>
+
+<div class="formCategoria">
+	  <h2>Modificar Valoración</h2>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
@@ -33,46 +34,48 @@
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon2">Descripción</span>
+    <span class="input-group-text" id="basic-addon2">Puntuación</span>
   </div>
-  <input type="text" maxlength="500" class="form-control" placeholder="Nueva descripción" aria-label="descripcion" aria-describedby="basic-addon2">
+  <input type="number" min="1" max="5" step="1" list="numerosValoracion" class="form-control" placeholder="Nueva puntuación" aria-label="puntuacion" aria-describedby="basic-addon2">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">Precio</span>
+    <span class="input-group-text" id="basic-addon3">Comentario</span>
   </div>
-  <input type="number" class="form-control" placeholder="Nuevo Precio" aria-label="price" aria-describedby="basic-addon3">
+  <input type="text" maxlength="500" class="form-control" placeholder="Nuevo comentario" aria-label="comentario" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon4">Stock</span>
+    <span class="input-group-text" id="basic-addon3">Fecha</span>
   </div>
-  <input type="number" min="0" step="1" class="form-control" placeholder="Nuevo Stock" aria-label="stock" aria-describedby="basic-addon4">
+  <input type="date" class="form-control" placeholder="Nueva fecha" aria-label="fecha" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon5">Id Categoría</span>
+    <span class="input-group-text" id="basic-addon3">Id Publicación</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Categoría" aria-label="categoria" aria-describedby="basic-addon5">
+  <input type="text" class="form-control" placeholder="Asignar publicación" aria-label="publicacion" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon6">Id Ubiciación</span>
+    <span class="input-group-text" id="basic-addon3">Id Compra</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Ubiciación" aria-label="location" aria-describedby="basic-addon6">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon7">Id Usuario</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Asignar Usuario" aria-label="user" aria-describedby="basic-addon7">
+  <input type="text" class="form-control" placeholder="Asignar compra" aria-label="compra" aria-describedby="basic-addon3">
 </div>
 
 <button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
 </div>
 </div>
+
+<datalist id="numerosValoracion">
+  <option value="1">
+  <option value="2">
+  <option value="3">
+  <option value="4">
+  <option value="5">
+</datalist>
+

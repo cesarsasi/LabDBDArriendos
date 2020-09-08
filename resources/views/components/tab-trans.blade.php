@@ -24,7 +24,7 @@
 	        <thead>
 	          <tr>
 	            <th>#</th>
-	            <th>Metodo de pago</th>
+	            <th>Medio de pago</th>
 	            <th>Tarjeta</th>
 	          </tr>
 	        </thead>

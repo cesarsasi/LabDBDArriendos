@@ -23,7 +23,7 @@
 	</div>
 
 <div class="formCategoria">
-	  <h2>Modificar Categoría</h2>
+	  <h2>Modificar Rol</h2>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
@@ -34,18 +34,17 @@
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon2">Nombre</span>
+    <span class="input-group-text" id="basic-addon2">Tipo</span>
   </div>
-  <input type="text" maxlength="20" class="form-control" placeholder="Nuevo nombre" aria-label="nombre" aria-describedby="basic-addon2">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">Tipo</span>
-  </div>
-  <input type="text" maxlength="20" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon3">
+  <input type="number" min="1" max="3" step="1" list="numerosRol" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon2">
 </div>
 
 <button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
 </div>
 </div>
+
+<datalist id="numerosRol">
+  <option value="1">
+  <option value="2">
+  <option value="3">
+</datalist>

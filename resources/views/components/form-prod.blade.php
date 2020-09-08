@@ -23,7 +23,7 @@
 	</div>
 
 <div class="formCategoria">
-	  <h2>Modificar Categoría</h2>
+	  <h2>Modificar Producto</h2>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
@@ -41,11 +41,23 @@
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">Tipo</span>
+    <span class="input-group-text" id="basic-addon3">Disponibilidad</span>
   </div>
-  <input type="text" maxlength="20" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon3">
+  <input type="number" min="0" max="1" step="1" list="numerosDisp" class="form-control" placeholder="Nueva disponibilidad" aria-label="disponibilidad" aria-describedby="basic-addon3">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Id publicación</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Asignar publicación" aria-label="publicacion" aria-describedby="basic-addon3">
 </div>
 
 <button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
 </div>
 </div>
+
+<datalist id="numerosDisp">
+  <option value="0">
+  <option value="1">
+</datalist>

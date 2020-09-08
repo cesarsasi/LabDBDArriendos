@@ -24,48 +24,63 @@
 	
 <div class="formPurch">
 	<h2>Modificar Compra</h2>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
   <input type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon2">Metodo de Pago</span>
+    <span class="input-group-text" id="basic-addon2">Medio de Pago</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nueva Region" aria-label="region" aria-describedby="basic-addon2">
+  <input type="number" min="1" max="4" step="1" list="numerosMedioDePago"  class="form-control" placeholder="Medio de pago" aria-label="pago" aria-describedby="basic-addon2">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">Precio</span>
+    <span class="input-group-text" id="basic-addon3">Tarjeta</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nuevo Precio" aria-label="price" aria-describedby="basic-addon3">
+  <input type="number" class="form-control" placeholder="Nuevo numero de tarjeta" aria-label="tarjeta" aria-describedby="basic-addon3">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon4">Stock</span>
+    <span class="input-group-text" id="basic-addon4">Fecha de incio</span>
   </div>
-  <input type="text" class="form-control" placeholder="Nuevo Stock" aria-label="stock" aria-describedby="basic-addon4">
+  <input type="date" class="form-control" placeholder="Nueva fecha de inicio" aria-label="inicio" aria-describedby="basic-addon4">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon5">Id Categoria</span>
+    <span class="input-group-text" id="basic-addon4">Fecha de vencimiento</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Categoria" aria-label="categoria" aria-describedby="basic-addon5">
+  <input type="date" class="form-control" placeholder="Nueva fecha de vencimiento" aria-label="vencimiento" aria-describedby="basic-addon4">
 </div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon6">Id Ubiciación</span>
+    <span class="input-group-text" id="basic-addon4">Fecha de entrega</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Ubiciación" aria-label="location" aria-describedby="basic-addon6">
+  <input type="date" class="form-control" placeholder="Nueva fecha de entrega" aria-label="entrega" aria-describedby="basic-addon4">
 </div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon5">Id Publicación</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Asignar Publicación" aria-label="publicacion" aria-describedby="basic-addon5">
+</div>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon7">Id Usuario</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Usuario" aria-label="user" aria-describedby="basic-addon7">
+  <input type="text" class="form-control" placeholder="Asignar Usuario" aria-label="usuario" aria-describedby="basic-addon7">
 </div>
+
 <button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
 </div>
 </div>
