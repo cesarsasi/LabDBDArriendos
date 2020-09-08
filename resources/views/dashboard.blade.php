@@ -187,9 +187,11 @@
     </div>
     <div id="formPubl" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-form-pub/>
+    </div>
     <div id="formPurch" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <x-form-purs/>
-    </div> 
+      <x-form-purch/>
+    </div>
+
     </div>
   </div>
 </div>
@@ -225,7 +227,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabCat").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabCat").html(text);
   };
@@ -236,7 +238,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabLocat").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabLocat").html(text);
   };
@@ -247,7 +249,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabRol").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabRol").html(text);
   };
@@ -258,7 +260,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabTrans").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabTans").html(text);
   };
@@ -269,7 +271,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabUser").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabUser").html(text);
   };
@@ -280,7 +282,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabAssessment").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabAssess").html(text);
   };
@@ -291,7 +293,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabProd").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     
     $("#hideShowTabProd").html(text);
@@ -303,7 +305,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabPubl").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     
     $("#hideShowTabPubl").html(text);
@@ -315,7 +317,7 @@
       text = "Ocultar tabla";
     }else{
       $("#tabPurch").hide();
-      text = "Visualizar tabla"
+      text = "Visualizar tabla";
     }
     $("#hideShowTabPurch").html(text);
   };
@@ -327,7 +329,7 @@
       text = "Cerrar Edición";
     }else{
       $("#formCat").hide();
-      text = "Cerrar Edición"
+      text = "Editar tupla de datos";
     }
     
     $("#hideShowFormCat").html(text);
@@ -339,7 +341,7 @@
       text = "Cerrar Edición";
     }else{
       $("#formLocat").hide();
-      text = "Cerrar Edición"
+      text = "Editar tupla de datos";
     }
     $("#hideShowFormLocat").html(text);
   };
@@ -350,7 +352,7 @@
       text = "Cerrar Edición";
     }else{
       $("#formUser").hide();
-      text = "Cerrar Edición"
+      text = "Editar tupla de datos";
     }
     $("#hideShowFormUser").html(text);
   };
@@ -361,7 +363,7 @@
       text = "Cerrar Edición";
     }else{
       $("#formPubl").hide();
-      text = "Cerrar Edición"
+      text = "Editar tupla de datos";
     }
     $("#hideShowFormPubl").html(text);
   };
@@ -372,9 +374,10 @@
       text = "Cerrar Edición";
     }else{
       $("#formPurch").hide();
-      text = "Cerrar Edición"
+      text = "Editar tupla de datos";
     }
     $("#hideShowFormPurch").html(text);
   };
+
 </script>
 

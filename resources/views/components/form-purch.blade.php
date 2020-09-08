@@ -21,8 +21,9 @@
 	    </button>
 	  </div>
 	</div>
-<div class="formPubl">
-	<h2>Modificar Publicación</h2>
+	
+<div class="formPurch">
+	<h2>Modificar Compra</h2>
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
@@ -31,7 +32,7 @@
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon2">Descripcion</span>
+    <span class="input-group-text" id="basic-addon2">Metodo de Pago</span>
   </div>
   <input type="text" class="form-control" placeholder="Nueva Region" aria-label="region" aria-describedby="basic-addon2">
 </div>
