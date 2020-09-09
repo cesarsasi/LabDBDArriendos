@@ -16,7 +16,8 @@ class ProductController extends Controller
     public static function index()
     {
         $product = Product::all();
-        return $product;
+        $sorted = $product->sortBy('id');
+        return $sorted;
     }
 
     /**

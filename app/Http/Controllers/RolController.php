@@ -16,7 +16,8 @@ class RolController extends Controller
     public static function index()
     {
         $rol = Rol::all();
-        return $rol;
+        $sorted = $rol->sortBy('id');
+        return $sorted;
     }
 
     /**

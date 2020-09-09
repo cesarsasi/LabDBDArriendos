@@ -16,7 +16,8 @@ class LocationController extends Controller
     public static function index()
     {
         $location = Location::all();
-        return $location;
+        $sorted = $location->sortBy('id');
+        return $sorted;
     }
 
     /**

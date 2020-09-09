@@ -16,7 +16,8 @@ class TransactionController extends Controller
     public static function index()
     {
         $transaction = Transaction::all();
-        return $transaction;
+        $sorted = $transaction->sortBy('id');
+        return $sorted;
     }
 
     /**

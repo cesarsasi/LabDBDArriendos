@@ -16,7 +16,8 @@ class RolUserController extends Controller
     public function index()
     {
         $rolUser = RolUser::all();
-        return response()->json($rolUser);
+        $sorted = $rolUser->sortBy('id');
+        return $sorted;
     }
 
     /**
