@@ -21,6 +21,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
 //Rutas de evaluacion
 Route::get('/assessment/all', 'AssessmentController@index');
 Route::get('/assessment/{id}', 'AssessmentController@show');
