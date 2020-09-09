@@ -1,3 +1,16 @@
+@inject('PublicationController', 'App\Http\Controllers\PublicationController')	
+<?php $publications = $PublicationController::index();  ?>
+
+@inject('CategoryController', 'App\Http\Controllers\CategoryController')	
+<?php $categories = $CategoryController::index();  ?>
+
+@inject('LocationController', 'App\Http\Controllers\LocationController')	
+<?php $locations = $LocationController::index();  ?>
+
+@inject('UserController', 'App\Http\Controllers\UserController')	
+<?php $users = $UserController::index();  ?>
+
+
 <style type="text/css">
 	.input-group>.input-group-prepend {
 	    flex: 0 0 20%;
@@ -24,55 +37,107 @@
 <div class="formPubl">
 	<h2>Modificar Publicación</h2>
 
+<form>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <input type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
+  <select id="idPubl" class="form-control" id="exampleFormControlSelect1">
+    @foreach($publications as $publication)
+				<option>{{ $publication->id }}</option>
+			  @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Descripción</span>
   </div>
-  <input type="text" maxlength="500" class="form-control" placeholder="Nueva descripción" aria-label="descripcion" aria-describedby="basic-addon2">
+  <input id="descipcion" type="text" maxlength="500" class="form-control" placeholder="Nueva descripción" aria-label="descripcion" aria-describedby="basic-addon2">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Precio</span>
   </div>
-  <input type="number" class="form-control" placeholder="Nuevo Precio" aria-label="price" aria-describedby="basic-addon3">
+  <input id="precio" type="number" class="form-control" placeholder="Nuevo Precio" aria-label="price" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon4">Stock</span>
   </div>
-  <input type="number" min="0" step="1" class="form-control" placeholder="Nuevo Stock" aria-label="stock" aria-describedby="basic-addon4">
+  <input id="stock" type="number" min="0" step="1" class="form-control" placeholder="Nuevo Stock" aria-label="stock" aria-describedby="basic-addon4">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon5">Id Categoría</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Categoría" aria-label="categoria" aria-describedby="basic-addon5">
+  <select id="idCatPubl" class="form-control" id="exampleFormControlSelect1">
+    @foreach($categories as $category)
+				<option>{{ $category->id }}</option>
+			  @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon6">Id Ubiciación</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Ubiciación" aria-label="location" aria-describedby="basic-addon6">
+  <select id="idLocPubl" class="form-control" id="exampleFormControlSelect1">
+    @foreach($locations as $location)
+				<option>{{ $location->id }}</option>
+			  @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon7">Id Usuario</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Usuario" aria-label="user" aria-describedby="basic-addon7">
+  <select id="idUserPubl" class="form-control" id="exampleFormControlSelect1">
+    @foreach($users as $user)
+				<option>{{ $user->id }}</option>
+			  @endforeach
+    </select> 
 </div>
 
-<button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
+<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendPubl();"/>
+
+</form>
+
 </div>
 </div>
+
+<script type="text/javascript">
+
+  function sendPubl(){
+
+    var id = document.getElementById("idPubl").value;
+    var description = document.getElementById("descipcion").value;
+    var price = document.getElementById("precio").value;
+    var stock = document.getElementById("stock").value;
+    var category_id = document.getElementById("idCatPubl").value;
+    var locate_id = document.getElementById("idLocPubl").value;
+    var user_id = document.getElementById("idUserPubl").value;
+
+    $.ajax({
+
+        type:'PUT',
+        url:'/publication/update/' + id ,
+        data: {
+		      description : description,
+          price : price,
+          stock : stock,
+          category_id : category_id,
+          locate_id : locate_id,
+          user_id : user_id
+        },
+        success: function(data){
+          console.log("update exitoso");
+        }
+    });
+  }
+</script>

@@ -32,7 +32,11 @@
 			  <tr>
 				<td>{{ $product->id }}</td>
 				<td>{{ $product->name }}</td>
-				<td>{{ $product->availability }}</td>
+				@if ($product->availability == 0)
+					<td>No</td>
+				@elseif ($product->availability == 1)
+					<td>Si</td>
+				@endif
 			  </tr>
 			  @endforeach
 	        </tbody>

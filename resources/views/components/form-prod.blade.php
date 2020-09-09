@@ -1,3 +1,9 @@
+@inject('ProductController', 'App\Http\Controllers\ProductController')	
+<?php $products = $ProductController::index();  ?>
+
+@inject('PublicationController', 'App\Http\Controllers\PublicationController')	
+<?php $publications = $PublicationController::index();  ?>
+
 <style type="text/css">
 	.input-group>.input-group-prepend {
 	    flex: 0 0 20%;
@@ -25,35 +31,51 @@
 <div class="formCategoria">
 	  <h2>Modificar Producto</h2>
 
+<form>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <input type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
+  <select id="idProd" class="form-control" id="exampleFormControlSelect1">
+    @foreach($products as $product)
+				<option>{{ $product->id }}</option>
+			  @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Nombre</span>
   </div>
-  <input type="text" maxlength="20" class="form-control" placeholder="Nuevo nombre" aria-label="nombre" aria-describedby="basic-addon2">
+  <input id="nombre" type="text" maxlength="20" class="form-control" placeholder="Nuevo nombre" aria-label="nombre" aria-describedby="basic-addon2">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Disponibilidad</span>
   </div>
-  <input type="number" min="0" max="1" step="1" list="numerosDisp" class="form-control" placeholder="Nueva disponibilidad" aria-label="disponibilidad" aria-describedby="basic-addon3">
+  <select id="disp" class="form-control" id="exampleFormControlSelect1">
+      <option value=0>No</option>
+      <option value=1>Si</option>
+    </select>  
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Id publicación</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar publicación" aria-label="publicacion" aria-describedby="basic-addon3">
+  <select id="idPublProd" class="form-control" id="exampleFormControlSelect1">
+    @foreach($publications as $publication)
+				<option>{{ $publication->id }}</option>
+			  @endforeach
+    </select> 
 </div>
 
-<button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
+<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendProd();"/>
+
+</form>
+
 </div>
 </div>
 
@@ -61,3 +83,28 @@
   <option value="0">
   <option value="1">
 </datalist>
+
+<script type="text/javascript">
+
+  function sendProd(){
+
+    var id = document.getElementById("idProd").value;
+    var name = document.getElementById("nombre").value;
+    var availability = document.getElementById("disp").value;
+    var publication_id = document.getElementById("idPublProd").value;
+
+    $.ajax({
+
+        type:'PUT',
+        url:'/product/update/' + id ,
+        data: {
+		  name : name,
+          availability : availability,
+          publication_id : publication_id
+        },
+        success: function(data){
+          console.log("update exitoso");
+        }
+    });
+  }
+</script>

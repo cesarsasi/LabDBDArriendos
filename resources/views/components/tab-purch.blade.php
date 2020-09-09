@@ -34,7 +34,17 @@
 			@foreach($purchases as $purchase)
 			  <tr>
 				<td>{{ $purchase->id }}</td>
-				<td>{{ $purchase->paymentMethod }}</td>
+
+				@if ($purchase->paymentMethod == 1)
+					<td>Efectivo</td>
+				@elseif ($purchase->paymentMethod == 2)
+					<td>Cheque</td>
+				@elseif ($purchase->paymentMethod == 3)
+					<td>Debito</td>
+				@elseif ($purchase->paymentMethod == 4)
+					<td>Credito</td>
+				@endif
+
 				<td>{{ $purchase->card }}</td>
 				<td>{{ $purchase->startdate }}</td>
 				<td>{{ $purchase->finishdate }}</td>
