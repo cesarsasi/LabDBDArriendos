@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}" >
   <head>
     <!-- Required meta tags -->

@@ -20,14 +20,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-
+//login y registro
 Route::get('/login', function () {
     return view('login');
 });
-
 Route::get('/register', function () {
     return view('register');
 });
+
 
 //Rutas de evaluacion
 Route::get('/assessment/all', 'AssessmentController@index');
@@ -98,3 +98,5 @@ Route::get('/user/{id}', 'UserController@show');
 Route::post('/user/create', 'UserController@store');
 Route::put('/user/update/{id}', 'UserController@update');
 Route::delete('/user/delete/{id}', 'UserController@delete');
+
+Route::post('/user/create', 'RegisterController@store')->name('crearUser');

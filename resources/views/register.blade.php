@@ -29,29 +29,30 @@
     </h1>
     
 
-    <form>
+    <form action="{{route( 'crearUser')}} " method="POST">
+      @csrf
         <div class="form-group mx-auto w-25">
-            <label for="name">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
+            <label for="casillaNombre">Nombre</label>
+            <input type="text" class="form-control" name="name" id="name" maxlength="20" placeholder="Ingrese su nombre">
         </div>
         <div class="form-group mx-auto w-25">
-            <label for="lastname">Apellido</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Ingrese su apellido">
+            <label for="casillaApellido">Apellido</label>
+            <input type="text" class="form-control" name="lastname" id="lastname" maxlength="20" placeholder="Ingrese su apellido">
         </div>
         <div class="form-group mx-auto w-25">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su email">
+            <label for="casillaEmail">Email</label>
+            <input type="email" class="form-control" name="email" id="email" maxlength="20" placeholder="Ingrese su email">
         </div>
         <div class="form-group mx-auto w-25">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
+            <label for="casillaContraseña">Contraseña</label>
+            <input type="password" class="form-control" name="password" id="password" maxlength="500" placeholder="Ingrese su contraseña">
         </div>
         <div class="form-group mx-auto w-25">
-            <label for="exampleFormControlTextarea1">Descripción</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripción del usuario"></textarea>
+            <label for="casillaDescripcion">Descripción</label>
+            <textarea class="form-control" name="description" id="description" rows="3" maxlength="500" placeholder="Descripción del usuario"></textarea>
           </div>
         <div class="col text-center">
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark">Registrar usuario</button>
         </div>
     </form>
 
@@ -61,5 +62,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
   </body>
+
+  
 </html>
+
