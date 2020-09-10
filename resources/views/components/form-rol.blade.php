@@ -29,6 +29,8 @@
 <div class="formCategoria">
 	  <h2>Modificar Rol</h2>
 
+<form>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
@@ -44,18 +46,19 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Tipo</span>
   </div>
-  <input id="rolTipo" type="number" min="1" max="3" step="1" list="numerosRol" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon2">
+  <select id="rolTipo" class="form-control" id="exampleFormControlSelect1">
+      <option value=1>Arrendatario</option>
+      <option value=2>Arrendatario y Publicador</option>
+      <option value=3>Administrador</option>
+    </select>   
 </div>
 
-<button type="submit" class="btn btn-outline-dark btn-block border-dark" onclick="sendRol()">Modificar</button>
-</div>
-</div>
+<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendRol();"/>
 
-<datalist id="numerosRol">
-  <option value="1">Arrendatario</option>
-  <option value="2">Arrendatario y Publicador</option>
-  <option value="3">Administrador</option>
-</datalist>
+</form>
+
+</div>
+</div>
 
 <script type="text/javascript">
 
@@ -69,7 +72,7 @@
         type:'PUT',
         url:'/rol/update/' + id ,
         data: {
-		      rol : roltype,
+		      type : roltype,
         },
         success: function(data){
           window.location.reload();

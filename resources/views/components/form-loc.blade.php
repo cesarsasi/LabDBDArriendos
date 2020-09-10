@@ -28,6 +28,8 @@
 <div class="formLoc">
 	<h2>Modificar Dirección</h2>
 
+<form>
+
 <div class="input-group mb-3">
 	  <div class="input-group-prepend ">
 	    <span class="input-group-text" id="formId">Id</span>
@@ -43,7 +45,24 @@
 	  <div class="input-group-prepend">
 	    <span class="input-group-text" id="formRegion">Región</span>
 	  </div>
-	  <input id="locRegion" type="text" list="listaRegiones" maxlength="20" class="form-control" placeholder="Nueva Región" aria-label="region" aria-describedby="basic-addon2">
+	  <select id="locRegion" class="form-control" id="exampleFormControlSelect1">
+			<option>Arica y Parinacota</option>
+			<option>Tarapacá</option>
+			<option>Antofagasta</option>
+			<option>Atacama</option>
+			<option>Coquimbo</option>
+			<option>Valparaíso</option>
+			<option>Metropolitana</option>
+			<option>O’Higgins</option>
+			<option>Maule</option>
+			<option>Ñuble</option>
+			<option>Biobío</option>
+			<option>La Araucanía</option>
+			<option>Los Ríos</option>
+			<option>Los Lagos</option>
+			<option>Aysén</option>
+			<option>Magallanes</option>
+		</select>  	  
 	</div>
 
 	<div class="input-group mb-3">
@@ -61,27 +80,11 @@
 	</div>
 
 	<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendLoc();"/>
-</div>
-</div>
 
-<datalist id="listaRegiones">
-  <option value="Arica y Parinacota">
-  <option value="Tarapacá">
-  <option value="Antofagasta">
-  <option value="Atacama">
-  <option value="Coquimbo">
-  <option value="Valparaíso">
-  <option value="Metropolitana">
-  <option value="O’Higgins">
-  <option value="Maule">
-  <option value="Ñuble">
-  <option value="Biobío">
-  <option value="La Araucanía">
-  <option value="Los Ríos">
-  <option value="Los Lagos">
-  <option value="Aysén">
-  <option value="Magallanes">
-</datalist>
+</form>
+
+</div>
+</div>
 
 <datalist id="listaComunas">
   <option value="Talves hacerlo">

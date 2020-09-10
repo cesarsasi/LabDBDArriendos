@@ -1,3 +1,6 @@
+@inject('UserController', 'App\Http\Controllers\UserController')  
+<?php $users = $UserController::index();  ?>
+
 <style type="text/css">
   .input-group>.input-group-prepend {
       flex: 0 0 20%;
@@ -25,11 +28,17 @@
 <div class="formPurch">
   <h2>Modificar Usuario</h2>
 
+<form>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <input id="userId" type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
+  <select id="userId" class="form-control" id="exampleFormControlSelect1">
+    @foreach($users as $user)
+        <option>{{ $user->id }}</option>
+        @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
@@ -67,7 +76,10 @@
   <input id="userDesc" type="text" maxlength="500" class="form-control" placeholder="Nueva Descripción" aria-label="descrip" aria-describedby="basic-addon6">
 </div>
 
-<button type="submit" class="btn btn-outline-dark btn-block border-dark" onclick="sendUser()">Modificar</button>
+<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendUser();"/>
+
+</form>
+
 </div>
 </div>
 

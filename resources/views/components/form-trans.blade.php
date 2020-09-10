@@ -86,7 +86,7 @@
 
     var idTrans = document.getElementById("transId").value;
     var medTrans = document.getElementById("transMedio").value;
-    var tarjTrans = document.getElementById("tarjetaPurch").value;
+    var tarjTrans = document.getElementById("transTarj").value;
     var idUserTrans = document.getElementById("transIdUser").value;
 
     $.ajax({
