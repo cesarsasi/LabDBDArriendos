@@ -16,7 +16,8 @@ class AssessmentController extends Controller
     public static function index()
     {
         $assessment = Assessment::all();
-        return $assessment;
+        $sorted = $assessment->sortBy('id');
+        return $sorted;
     }
 
     /**

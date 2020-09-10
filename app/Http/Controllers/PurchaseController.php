@@ -16,7 +16,8 @@ class PurchaseController extends Controller
     public static function index()
     {
         $purchase = Purchase::all();
-        return $purchase;
+        $sorted = $purchase->sortBy('id');
+        return $sorted;
     }
 
     /**

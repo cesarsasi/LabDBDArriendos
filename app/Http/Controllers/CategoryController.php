@@ -16,7 +16,8 @@ class CategoryController extends Controller
     public static function index()
     {
         $category = Category::all();
-        return $category;
+        $sorted = $category->sortBy('id');
+        return $sorted;
     }
 
     /**

@@ -16,7 +16,8 @@ class PublicationController extends Controller
     public static function index()
     {
         $publication = Publication::all();
-        return $publication;
+        $sorted = $publication->sortBy('id');
+        return $sorted;
     }
 
     /**
