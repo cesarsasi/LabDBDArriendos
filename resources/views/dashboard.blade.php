@@ -135,7 +135,7 @@
           </li>
           <li class="nav-item">
             <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
-            Tabla Rol de Usuarios
+            Tabla Roles
             </a>
             </p>
             <div class="collapse" id="collapseExample9">
@@ -144,6 +144,7 @@
                 <a id = "hideShowFormRol" class="nav-link active" onclick="ShowHideFormRol()">Editar tupla de datos</a>
               </div>
           </li>
+          
         </ul>
       </div>
     </nav>
@@ -210,10 +211,6 @@
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </html>
@@ -230,13 +227,13 @@
 
   $("#formCat").hide();
   $("#formLocat").hide();
-  $("#formUser").hide();
-  $("#formPubl").hide();
-  $("#formPurch").hide();
-  $("#formAssess").hide();
-  $("#formProd").hide();
   $("#formRol").hide();
   $("#formTrans").hide();
+  $("#formUser").hide();
+  $("#formAssess").hide();
+  $("#formProd").hide();
+  $("#formPubl").hide();
+  $("#formPurch").hide();
 
   function ShowHideTabCat(){
     let text = "";
@@ -340,6 +337,18 @@
     $("#hideShowTabPurch").html(text);
   };
 
+  function ShowHideTabRolUser(){
+    let text = "";
+    if($("#hideShowTabRolUser").text() === "Visualizar tabla"){
+      $("#tabRolUser").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabRolUser").hide();
+      text = "Visualizar tabla";
+    }
+    $("#hideShowTabRolUser").html(text);
+  };
+
   function ShowHideFormCat(){
     let text = "";
     if($("#hideShowFormCat").text() === "Editar tupla de datos"){
@@ -440,6 +449,17 @@
     }
     $("#hideShowFormTrans").html(text);
   };
-
+  function ShowHideFormRolUser(){
+    let text = "";
+    if($("#hideShowFormRolUser").text() === "Visualizar tabla"){
+      $("#formRolUser").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#formRolUser").hide();
+      text = "Visualizar tabla";
+    }
+    $("#hideShowFormRolUser").html(text);
+  }
+;
 </script>
 

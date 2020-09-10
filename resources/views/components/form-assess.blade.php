@@ -95,13 +95,13 @@
 			  @endforeach
     </select> 
 </div>
-
 <input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendAssess();"/>
-
 </form>
 
 </div>
 </div>
+
+
 
 <script type="text/javascript">
 
@@ -113,6 +113,8 @@
     var date = document.getElementById("fechaAssess").value;
     var publication_id = document.getElementById("idPublAssess").value;
     var purchase_id = document.getElementById("idCompAssess").value;
+
+
 
     $.ajax({
 
@@ -126,7 +128,6 @@
           purchase_id : purchase_id
         },
         success: function(data){
-          window.location.reload();
           console.log("update exitoso");
         },
         error: function(data){

@@ -74,7 +74,7 @@
     </select> 
 </div>
 
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendTrans();"/>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendTrans();"/>
 
 </forms>
 </div>
@@ -83,7 +83,6 @@
 <script type="text/javascript">
 
   function sendTrans(){
-
     var idTrans = document.getElementById("transId").value;
     var medTrans = document.getElementById("transMedio").value;
     var tarjTrans = document.getElementById("transTarj").value;
@@ -99,11 +98,9 @@
           user_id : idUserTrans
         },
         success: function(data){
-          window.location.reload();
           console.log("update exitoso");
         },
         error: function(data){
-          window.location.reload();
           console.log("update fallido");
         }
     });

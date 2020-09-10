@@ -109,11 +109,10 @@
           street : Streloc
         },
         success: function(data){
-        	window.location.reload();
         	console.log("update exitoso");
         },
         error: function(data){
-          console.log("update fallido");
+        	console.log("update fallido");
         }
     });
   }

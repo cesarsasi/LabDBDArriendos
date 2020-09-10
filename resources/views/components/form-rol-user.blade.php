@@ -1,6 +1,11 @@
+@inject('RolUserController', 'App\Http\Controllers\RolUserController')	
+<?php $rolusers = $RolUserController::index();  ?>
+
 @inject('RolController', 'App\Http\Controllers\RolController')  
 <?php $roles = $RolController::index();  ?>
 
+@inject('UserController', 'App\Http\Controllers\UserController')	
+<?php $users = $UserController::index();  ?>
 
 <style type="text/css">
 	.input-group>.input-group-prepend {
@@ -27,7 +32,7 @@
 	</div>
 
 <div class="formCategoria">
-	  <h2>Modificar Rol</h2>
+	  <h2>Modificar Rol del Usuario </h2>
 
 <form>
 
@@ -36,20 +41,31 @@
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
   <select id="rolId" class="form-control">
-    @foreach($roles as $rol)
-        <option>{{ $rol->id }}</option>
+    @foreach($rolusers as $rolUser)
+        <option>{{ $rolUser->id }}</option>
         @endforeach
     </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon2">Tipo</span>
+    <span class="input-group-text" id="basic-addon2">Rol</span>
   </div>
   <select id="rolTipo" class="form-control" id="exampleFormControlSelect1">
       <option value=1>Arrendatario</option>
       <option value=2>Arrendatario y Publicador</option>
       <option value=3>Administrador</option>
+    </select>   
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon2">User</span>
+  </div>
+  <select id="rolUser" class="form-control" id="exampleFormControlSelect1">
+    @foreach($users as $user)
+				<option>{{ $user->id }}</option>
+			  @endforeach
     </select>   
 </div>
 
@@ -66,13 +82,15 @@
 
     var id = document.getElementById("rolId").value;
     var roltype = document.getElementById("rolTipo").value;
+    var rolUser = document.getElementById("rolUser").value;
 
     $.ajax({
 
         type:'PUT',
-        url:'/rol/update/' + id ,
+        url:'/rolUser/update/' + id ,
         data: {
-		      type : roltype,
+        	  rol_id: roltype,
+        	  user_id: rolUser,
         },
         success: function(data){
           console.log("update exitoso");

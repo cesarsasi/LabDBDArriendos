@@ -54,14 +54,13 @@
   </div>
   <input id="tipoCat" type="text" maxlength="20" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon3">
 </div>
-
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendCat();"/>
+<a id="Aviso"></a>
+<input  id="enviarcat" type="buttom" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendCat();"/>
 
 </form>
 
 </div>
 </div>
-
 <script type="text/javascript">
 
   function sendCat(){
@@ -69,6 +68,20 @@
     var id = document.getElementById("idCat").value;
     var name = document.getElementById("nombreCat").value;
     var type = document.getElementById("tipoCat").value;
+    let aviso = "";
+    let error = 0;
+
+    if( name === "" ){
+      aviso += "E: Nombre categoria vacía.\n"
+      error+=1;
+    }
+    if( type === "" ){
+      aviso += "\nE: Tipo categoria vacía"
+      error+=1;
+    }
+    if(error == 0 )
+      aviso = "Moficiacion Realizada"
+    $("#Aviso").html(aviso);
 
     $.ajax({
 
@@ -79,7 +92,6 @@
           type : type
         },
         success: function(data){
-          window.location.reload();
           console.log("update exitoso");
         },
         error: function(data){
