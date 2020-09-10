@@ -1,3 +1,9 @@
+@inject('TransactionController', 'App\Http\Controllers\TransactionController')  
+<?php $transactions = $TransactionController::index();  ?>
+
+@inject('UserController', 'App\Http\Controllers\UserController')  
+<?php $users = $UserController::index();  ?>
+
 <style type="text/css">
 	.input-group>.input-group-prepend {
 	    flex: 0 0 20%;
@@ -25,41 +31,81 @@
 <div class="formCategoria">
 	  <h2>Modificar Transacción</h2>
 
+<form>
+
 <div class="input-group mb-3">
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <input type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
+  <select id="transId" class="form-control" id="exampleFormControlSelect1">
+    @foreach($transactions as $transaction)
+        <option>{{ $transaction->id }}</option>
+        @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Medio de pago</span>
   </div>
-  <input type="number" min="1" max="4" step="1" list="numerosMedioDePago" class="form-control" placeholder="Nuevo medio de pago" aria-label="pago" aria-describedby="basic-addon2">
+  <select id="transMedio" class="form-control" id="exampleFormControlSelect1">
+      <option value=1>Efectivo</option>
+      <option value=2>Cheque</option>
+      <option value=3>Debito</option>
+      <option value=4>Credito</option>
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Tarjeta</span>
   </div>
-  <input type="number" class="form-control" placeholder="Nuevo numero de tarjeta" aria-label="tarjeta" aria-describedby="basic-addon3">
+  <input id="transTarj" type="number" class="form-control" placeholder="Nuevo numero de tarjeta" aria-label="tarjeta" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon7">Id Usuario</span>
   </div>
-  <input type="text" class="form-control" placeholder="Asignar Usuario" aria-label="usuario" aria-describedby="basic-addon7">
+  <select id="transIdUser" class="form-control" id="exampleFormControlSelect1">
+    @foreach($users as $user)
+        <option>{{ $user->id }}</option>
+        @endforeach
+    </select> 
 </div>
 
-<button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
+<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendTrans();"/>
+
+</forms>
 </div>
 </div>
 
-<datalist id="numerosMedioDePago">
-  <option value="1">
-  <option value="2">
-  <option value="3">
-  <option value="4">
-</datalist>
+<script type="text/javascript">
+
+  function sendTrans(){
+
+    var idTrans = document.getElementById("transId").value;
+    var medTrans = document.getElementById("transMedio").value;
+    var tarjTrans = document.getElementById("tarjetaPurch").value;
+    var idUserTrans = document.getElementById("transIdUser").value;
+
+    $.ajax({
+
+        type:'PUT',
+        url:'/transaction/update/' + idTrans ,
+        data: {
+          paymentMethod : medTrans,
+          card : tarjTrans,
+          user_id : idUserTrans
+        },
+        success: function(data){
+          window.location.reload();
+          console.log("update exitoso");
+        },
+        error: function(data){
+          window.location.reload();
+          console.log("update fallido");
+        }
+    });
+  }
+</script>

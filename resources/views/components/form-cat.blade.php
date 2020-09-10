@@ -34,7 +34,7 @@
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <select id="idCat" class="form-control" id="exampleFormControlSelect1">
+  <select id="idCat" class="form-control">
     @foreach($categories as $category)
 				<option>{{ $category->id }}</option>
 			  @endforeach
@@ -75,11 +75,15 @@
         type:'PUT',
         url:'/category/update/' + id ,
         data: {
-		  name : name,
+		      name : name,
           type : type
         },
         success: function(data){
+          window.location.reload();
           console.log("update exitoso");
+        },
+        error: function(data){
+          console.log("update fallido");
         }
     });
   }

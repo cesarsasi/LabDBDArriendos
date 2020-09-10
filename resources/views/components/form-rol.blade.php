@@ -1,3 +1,7 @@
+@inject('RolController', 'App\Http\Controllers\RolController')  
+<?php $roles = $RolController::index();  ?>
+
+
 <style type="text/css">
 	.input-group>.input-group-prepend {
 	    flex: 0 0 20%;
@@ -29,22 +33,51 @@
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <input type="text" class="form-control" placeholder="Id a Modificar" aria-label="id" aria-describedby="basic-addon1">
+  <select id="rolId" class="form-control">
+    @foreach($roles as $rol)
+        <option>{{ $rol->id }}</option>
+        @endforeach
+    </select> 
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Tipo</span>
   </div>
-  <input type="number" min="1" max="3" step="1" list="numerosRol" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon2">
+  <input id="rolTipo" type="number" min="1" max="3" step="1" list="numerosRol" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon2">
 </div>
 
-<button type="submit" class="btn btn-outline-dark btn-block border-dark" v-on:click="login($event)">Modificar</button>
+<button type="submit" class="btn btn-outline-dark btn-block border-dark" onclick="sendRol()">Modificar</button>
 </div>
 </div>
 
 <datalist id="numerosRol">
-  <option value="1">
-  <option value="2">
-  <option value="3">
+  <option value="1">Arrendatario</option>
+  <option value="2">Arrendatario y Publicador</option>
+  <option value="3">Administrador</option>
 </datalist>
+
+<script type="text/javascript">
+
+  function sendRol(){
+
+    var id = document.getElementById("rolId").value;
+    var roltype = document.getElementById("rolTipo").value;
+
+    $.ajax({
+
+        type:'PUT',
+        url:'/rol/update/' + id ,
+        data: {
+		      rol : roltype,
+        },
+        success: function(data){
+          window.location.reload();
+          console.log("update exitoso");
+        },
+        error: function(data){
+          console.log("update fallido");
+        }
+    });
+  }
+</script>

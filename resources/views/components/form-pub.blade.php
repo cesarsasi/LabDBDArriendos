@@ -1,4 +1,4 @@
-@inject('PublicationController', 'App\Http\Controllers\PublicationController')	
+@inject('PublicationController', 'App\Http\Controllers\PublicationController')
 <?php $publications = $PublicationController::index();  ?>
 
 @inject('CategoryController', 'App\Http\Controllers\CategoryController')	
@@ -54,28 +54,28 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon2">Descripción</span>
   </div>
-  <input id="descipcion" type="text" maxlength="500" class="form-control" placeholder="Nueva descripción" aria-label="descripcion" aria-describedby="basic-addon2">
+  <input id="descripcionPubl" type="text" maxlength="500" class="form-control" placeholder="Nueva descripción" aria-label="descripcion" aria-describedby="basic-addon2">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Precio</span>
   </div>
-  <input id="precio" type="number" class="form-control" placeholder="Nuevo Precio" aria-label="price" aria-describedby="basic-addon3">
+  <input id="precioPubl" type="number" class="form-control" placeholder="Nuevo Precio" aria-label="price" aria-describedby="basic-addon3">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon4">Stock</span>
   </div>
-  <input id="stock" type="number" min="0" step="1" class="form-control" placeholder="Nuevo Stock" aria-label="stock" aria-describedby="basic-addon4">
+  <input id="stockPubl" type="number" min="0" step="1" class="form-control" placeholder="Nuevo Stock" aria-label="stock" aria-describedby="basic-addon4">
 </div>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon5">Id Categoría</span>
   </div>
-  <select id="idCatPubl" class="form-control" id="exampleFormControlSelect1">
+  <select id="idCatPubl" class="form-control">
     @foreach($categories as $category)
 				<option>{{ $category->id }}</option>
 			  @endforeach
@@ -86,7 +86,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon6">Id Ubiciación</span>
   </div>
-  <select id="idLocPubl" class="form-control" id="exampleFormControlSelect1">
+  <select id="idLocPubl" class="form-control">
     @foreach($locations as $location)
 				<option>{{ $location->id }}</option>
 			  @endforeach
@@ -97,7 +97,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon7">Id Usuario</span>
   </div>
-  <select id="idUserPubl" class="form-control" id="exampleFormControlSelect1">
+  <select id="idUserPubl" class="form-control">
     @foreach($users as $user)
 				<option>{{ $user->id }}</option>
 			  @endforeach
@@ -115,28 +115,31 @@
 
   function sendPubl(){
 
-    var id = document.getElementById("idPubl").value;
-    var description = document.getElementById("descipcion").value;
-    var price = document.getElementById("precio").value;
-    var stock = document.getElementById("stock").value;
-    var category_id = document.getElementById("idCatPubl").value;
-    var locate_id = document.getElementById("idLocPubl").value;
-    var user_id = document.getElementById("idUserPubl").value;
+    var idPub = document.getElementById("idPubl").value;
+    var descriptionPub = document.getElementById("descripcionPubl").value;
+    var pricePub = document.getElementById("precioPubl").value;
+    var stockPub = document.getElementById("stockPubl").value;
+    var category_idPub = document.getElementById("idCatPubl").value;
+    var locate_idPub = document.getElementById("idLocPubl").value;
+    var user_idPub = document.getElementById("idUserPubl").value;
 
     $.ajax({
 
         type:'PUT',
-        url:'/publication/update/' + id ,
+        url:'/publication/update/' + idPub ,
         data: {
-		      description : description,
-          price : price,
-          stock : stock,
-          category_id : category_id,
-          locate_id : locate_id,
-          user_id : user_id
+		      description : descriptionPub,
+          price : pricePub,
+          stock : stockPub,
+          category_id : category_idPub,
+          locate_id : locate_idPub,
+          user_id : user_idPub
         },
         success: function(data){
           console.log("update exitoso");
+        },
+        error: function(data){
+          console.log("update fallido");
         }
     });
   }

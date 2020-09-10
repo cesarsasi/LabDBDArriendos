@@ -31,8 +31,16 @@
 	        <tbody>
 			@foreach($transactions as $transaction)
 			  <tr>
-				<td>{{ $transaction->id }}</td>
-				<td>{{ $transaction->paymentMethod }}</td>
+			  	<td>{{ $transaction->id }}</td>
+			  	@if ($transaction->paymentMethod == 1)
+					<td>Efectivo</td>
+				@elseif ($transaction->paymentMethod == 2)
+					<td>Cheque</td>
+				@elseif ($transaction->paymentMethod == 3)
+					<td>Debito</td>
+				@elseif ($transaction->paymentMethod == 4)
+					<td>Credito</td>
+				@endif
 				<td>{{ $transaction->card }}</td>
 			  </tr>
 			  @endforeach

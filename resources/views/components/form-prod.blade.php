@@ -37,7 +37,7 @@
   <div class="input-group-prepend ">
     <span class="input-group-text" id="basic-addon1">Id</span>
   </div>
-  <select id="idProd" class="form-control" id="exampleFormControlSelect1">
+  <select id="idProd" class="form-control">
     @foreach($products as $product)
 				<option>{{ $product->id }}</option>
 			  @endforeach
@@ -55,7 +55,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Disponibilidad</span>
   </div>
-  <select id="disp" class="form-control" id="exampleFormControlSelect1">
+  <select id="disp" class="form-control">
       <option value=0>No</option>
       <option value=1>Si</option>
     </select>  
@@ -65,7 +65,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">Id publicación</span>
   </div>
-  <select id="idPublProd" class="form-control" id="exampleFormControlSelect1">
+  <select id="idPublProd" class="form-control" >
     @foreach($publications as $publication)
 				<option>{{ $publication->id }}</option>
 			  @endforeach
@@ -104,6 +104,9 @@
         },
         success: function(data){
           console.log("update exitoso");
+        },
+        error: function(data){
+          console.log("update fallido");
         }
     });
   }

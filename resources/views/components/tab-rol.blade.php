@@ -19,7 +19,6 @@
 
 	<div class="tabProductos">
 	  <h2>Roles</h2>
-	  <h6 align="right">1 = Arrendatario, 2= Publicador y Arrendador, 3 = Administrador</h6>
 	    <div class="table-responsive">
 	      <table class="table table-striped table-sm">
 	        <thead>
@@ -30,9 +29,15 @@
 	        </thead>
 	        <tbody>
 			@foreach($rols as $rol)
-			  <tr>
+				<tr>
 				<td>{{ $rol->id }}</td>
-				<td>{{ $rol->type }}</td>
+				@if ($rol->type == 1)
+					<td>Arrendatario</td>
+				@elseif ($rol->type == 2)
+					<td>Publicador y arrendador</td>
+				@elseif ($rol->type == 3)
+					<td>Administrador</td>
+				@endif
 			  </tr>
 			  @endforeach
 	        </tbody>

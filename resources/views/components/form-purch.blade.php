@@ -1,7 +1,7 @@
 @inject('PurchaseController', 'App\Http\Controllers\PurchaseController')	
 <?php $purchases = $PurchaseController::index();  ?>\
 
-@inject('PublicationController', 'App\Http\Controllers\PublicationController')	
+@inject('PublicationController', 'App\Http\Controllers\PublicationController')
 <?php $publications = $PublicationController::index();  ?>
 
 @inject('UserController', 'App\Http\Controllers\UserController')	
@@ -129,12 +129,22 @@
     var user_id = document.getElementById("idPublPurch").value;
     var publication_id = document.getElementById("idUserPurch").value;
 
+    if(paymentMethod == "Efectivo" ){
+      paymentMethod = 1;
+    } else if(paymentMethod == "Cheque"){
+      paymentMethod = 2;
+    } else if(paymentMethod == "Debito"){
+      paymentMethod = 3;
+    } else if(paymentMethod == "Credito"){
+      paymentMethod = 4;
+    }
+
     $.ajax({
 
         type:'PUT',
         url:'/purchase/update/' + id ,
         data: {
-		      paymentMethod : paymentMethod,
+          paymentMethod : paymentMethod,
           card : card,
           startdate : startdate,
           finishdate : finishdate,
@@ -144,6 +154,9 @@
         },
         success: function(data){
           console.log("update exitoso");
+        },
+        error: function(data){
+          console.log("update fallido");
         }
     });
   }
