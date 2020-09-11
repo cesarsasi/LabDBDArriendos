@@ -71,7 +71,7 @@
 			  @endforeach
     </select> 
 </div>
-<a id="AvisoLoc"></a>
+<a id="avisoProd"></a>
 <input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendProd();"/>
 
 </form>
@@ -122,6 +122,6 @@
           }
       });
     }
-    $("#AvisoLoc").html(aviso);
+    $("#avisoProd").html(aviso);
   }
 </script>

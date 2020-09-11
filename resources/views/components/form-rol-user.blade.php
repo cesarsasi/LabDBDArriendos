@@ -69,7 +69,8 @@
     </select>   
 </div>
 
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendRol();"/>
+<a id="avisoRolUser"></a>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendRol();"/>
 
 </form>
 
@@ -83,21 +84,27 @@
     var id = document.getElementById("rolId").value;
     var roltype = document.getElementById("rolTipo").value;
     var rolUser = document.getElementById("rolUser").value;
+    let aviso = "";
+    let error = 0;
 
-    $.ajax({
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
 
-        type:'PUT',
-        url:'/rolUser/update/' + id ,
-        data: {
-        	  rol_id: roltype,
-        	  user_id: rolUser,
-        },
-        success: function(data){
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+          type:'PUT',
+          url:'/rolUser/update/' + id ,
+          data: {
+              rol_id: roltype,
+              user_id: rolUser,
+          },
+          success: function(data){
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#avisoRolUser").html(aviso);
   }
 </script>

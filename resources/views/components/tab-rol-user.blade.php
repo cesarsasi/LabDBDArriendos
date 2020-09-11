@@ -25,7 +25,7 @@
 	          <tr>
 	            <th>#</th>
 	            <th>Rol</th>
-	            <th>#Usuario</th>
+	            <th>Usuario</th>
 	          </tr>
 	        </thead>
 	        <tbody>

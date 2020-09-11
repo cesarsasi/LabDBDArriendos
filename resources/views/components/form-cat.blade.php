@@ -54,8 +54,8 @@
   </div>
   <input id="tipoCat" type="text" maxlength="20" class="form-control" placeholder="Nuevo tipo" aria-label="tipo" aria-describedby="basic-addon3">
 </div>
-<a id="Aviso"></a>
-<input  id="enviarcat" type="buttom" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendCat();"/>
+<a id="avisoCat"></a>
+<input  id="enviarcat" type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendCat();"/>
 
 </form>
 
@@ -97,6 +97,6 @@
         }
     });
     }
-    $("#Aviso").html(aviso);
+    $("#avisoCat").html(aviso);
   }
 </script>

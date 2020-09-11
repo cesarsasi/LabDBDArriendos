@@ -76,7 +76,8 @@
   <input id="userDesc" type="text" maxlength="500" class="form-control" placeholder="Nueva Descripción" aria-label="descrip" aria-describedby="basic-addon6">
 </div>
 
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendUser();"/>
+<a id="avisoUser"></a>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendUser();"/>
 
 </form>
 
@@ -93,25 +94,48 @@
     var emailUser = document.getElementById("userEmail").value;
     var passUser = document.getElementById("userPass").value;
     var descUser = document.getElementById("userDesc").value;
+    let aviso = "";
+    let error = 0;
 
-    $.ajax({
+    if( nameUser === "" || name.lenght>20){
+      aviso += "E: Nombre del usuario no debe estar vacio ni mayor a 20 caracteres.\n";
+      error+=1;
+    }
+    if( lastUser === "" || name.lenght>20){
+      aviso += "E: Apellido del usuario no debe estar vacio ni mayor a 20 caracteres.\n";
+      error+=1;
+    }
+    if( passUser === "" || name.lenght>500){
+      aviso += "\nE: Porvafor ingrese una password valida.";
+      error+=1;
+    }
+    if( descUser === "" || name.lenght>500){
+      aviso += "\nE: Descripcion del usuario no debe estar vacio ni mayor a 500 caracteres.";
+      error+=1;
+    }
 
-        type:'PUT',
-        url:'/user/update/' + idUser ,
-        data: {
-          name : nameUser,
-          lastname : lastUser,
-          email : emailUser,
-          password : passUser,
-          description : descUser
-        },
-        success: function(data){
-          window.location.reload();
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
+
+          type:'PUT',
+          url:'/user/update/' + idUser ,
+          data: {
+            name : nameUser,
+            lastname : lastUser,
+            email : emailUser,
+            password : passUser,
+            description : descUser
+          },
+          success: function(data){
+            window.location.reload();
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#avisoUser").html(aviso);
   }
 </script>

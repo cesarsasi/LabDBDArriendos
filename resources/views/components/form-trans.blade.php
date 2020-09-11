@@ -74,6 +74,8 @@
     </select> 
 </div>
 
+
+<a id="avisoTrans"></a>
 <input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendTrans();"/>
 
 </forms>
@@ -87,22 +89,33 @@
     var medTrans = document.getElementById("transMedio").value;
     var tarjTrans = document.getElementById("transTarj").value;
     var idUserTrans = document.getElementById("transIdUser").value;
+    let aviso = "";
+    let error = 0;
 
-    $.ajax({
+    if( Number.isInteger(tarjTrans) ||  tarjTrans === ""){
+      aviso += "\nE: El Campo Tarjeta debe contener un entero y no debe estar vacio.";
+      error+=1;
+    }
 
-        type:'PUT',
-        url:'/transaction/update/' + idTrans ,
-        data: {
-          paymentMethod : medTrans,
-          card : tarjTrans,
-          user_id : idUserTrans
-        },
-        success: function(data){
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
+
+          type:'PUT',
+          url:'/transaction/update/' + idTrans ,
+          data: {
+            paymentMethod : medTrans,
+            card : tarjTrans,
+            user_id : idUserTrans
+          },
+          success: function(data){
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#avisoTrans").html(aviso);
   }
 </script>

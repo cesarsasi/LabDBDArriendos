@@ -69,7 +69,7 @@
 	  <div class="input-group-prepend">
 	    <span class="input-group-text" id="formcomuna">Comuna</span>
 	  </div>
-	  <input id="locComuna" type="text" list="listaComunas" maxlength="20" class="form-control" placeholder="Nueva Comuna" aria-label="comuna" aria-describedby="basic-addon3">
+	  <input id="locComuna" type="text" maxlength="20" class="form-control" placeholder="Nueva Comuna" aria-label="comuna" aria-describedby="basic-addon3">
 	</div>
 
 	<div class="input-group mb-3">
@@ -85,10 +85,6 @@
 
 </div>
 </div>
-
-<datalist id="listaComunas">
-  <option value="Talves hacerlo">
-</datalist>
 
 <script type="text/javascript">
 

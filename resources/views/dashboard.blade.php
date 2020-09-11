@@ -122,6 +122,7 @@
                 <a id = "hideShowFormUser" class="nav-link active" onclick="ShowHideFormUser()">Editar tupla de datos</a>
               </div>
           </li>
+
           <li class="nav-item">
             <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
             Tabla Transacción
@@ -133,6 +134,7 @@
                 <a id = "hideShowFormTrans" class="nav-link active" onclick="ShowHideFormTrans()">Editar tupla de datos</a>
               </div>
           </li>
+
           <li class="nav-item">
             <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
             Tabla Roles
@@ -142,6 +144,18 @@
               <div class="card card-body">
                 <a id = "hideShowTabRol" class="nav-link active" onclick="ShowHideTabRol()">Visualizar tabla</a>
                 <a id = "hideShowFormRol" class="nav-link active" onclick="ShowHideFormRol()">Editar tupla de datos</a>
+              </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
+            Tabla Roles de Usuario
+            </a>
+            </p>
+            <div class="collapse" id="collapseExample10">
+              <div class="card card-body">
+                <a id = "hideShowTabRolUser" class="nav-link active" onclick="ShowHideTabRolUser()">Visualizar tabla</a>
+                <a id = "hideShowFormRolUser" class="nav-link active" onclick="ShowHideFormRolUser()">Editar tupla de datos</a>
               </div>
           </li>
           
@@ -176,6 +190,9 @@
     <div id="tabPurch" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-tab-purch/>
     </div>
+    <div id="tabRolUser" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-tab-rol-user/>
+    </div>
     <div id="formCat" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-form-cat/>
     </div>
@@ -200,6 +217,9 @@
     <div id="formRol" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-form-rol/>
     </div>
+    <div id="formRolUser" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <x-form-rol-user/>
+    </div>
     <div id="formTrans" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <x-form-trans/>
     </div>
@@ -218,6 +238,7 @@
   $("#tabCat").hide();
   $("#tabLocat").hide();
   $("#tabRol").hide();
+  $("#tabRolUser").hide();
   $("#tabTrans").hide();
   $("#tabUser").hide();
   $("#tabAssessment").hide();
@@ -228,6 +249,7 @@
   $("#formCat").hide();
   $("#formLocat").hide();
   $("#formRol").hide();
+  $("#formRolUser").hide();
   $("#formTrans").hide();
   $("#formUser").hide();
   $("#formAssess").hide();
@@ -267,6 +289,17 @@
       text = "Visualizar tabla";
     }
     $("#hideShowTabRol").html(text);
+  };
+  function ShowHideTabRolUser(){
+    let text = "";
+    if($("#hideShowTabRolUser").text() === "Visualizar tabla"){
+      $("#tabRolUser").show();
+      text = "Ocultar tabla";
+    }else{
+      $("#tabRolUser").hide();
+      text = "Visualizar tabla";
+    }
+    $("#hideShowTabRolUser").html(text);
   };
   function ShowHideTabTrans(){
     let text = "";
@@ -437,6 +470,17 @@
       text = "Editar tupla de datos";
     }
     $("#hideShowFormRol").html(text);
+  };
+  function ShowHideFormRolUser(){
+    let text = "";
+    if($("#hideShowFormRolUser").text() === "Editar tupla de datos"){
+      $("#formRolUser").show();
+      text = "Cerrar Edición";
+    }else{
+      $("#formRolUser").hide();
+      text = "Editar tupla de datos";
+    }
+    $("#hideShowFormRolUser").html(text);
   };
   function ShowHideFormTrans(){
     let text = "";
