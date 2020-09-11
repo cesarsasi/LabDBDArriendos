@@ -108,8 +108,8 @@
 			  @endforeach
     </select> 
 </div>
-
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendPurch();"/>
+<a id="AvisoPurch"></a>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendPurch();"/>
 
 </forms>
 
@@ -117,6 +117,14 @@
 </div>
 
 <script type="text/javascript">
+  function validarFormatoFecha(campo) {
+      var RegExPattern = /^\d{2,4}\/\d{1,2}\/\d{1,2}$/;
+      if ((campo.match(RegExPattern)) && (campo!='')) {
+            return true;
+      } else {
+            return false;
+      }
+  }
 
   function sendPurch(){
 
@@ -138,26 +146,52 @@
     } else if(paymentMethod == "Credito"){
       paymentMethod = 4;
     }
+    let aviso = "";
+    let error = 0;
 
-    $.ajax({
+    if(validarFormatoFecha(startdate) || startdate === ""){
+      aviso += "\nE: La fecha de inicio no debe estar vacia debe estar en el formato dd/mm/aaaa";
+      error+=1;
+    }
+    if(validarFormatoFecha(finishdate) || finishdate === ""){
+      aviso += "\nE: La fecha de termino no debe estar vacia debe estar en el formato dd/mm/aaaa";
+      error+=1;
+    }
+    if(validarFormatoFecha(deadline) || deadline === ""){
+      aviso += "\nE: La fecha limite no debe estar vacia debe estar en el formato dd/mm/aaaa";
+      error+=1;
+    }
+    if( Number.isInteger(paymentMethod) ||  paymentMethod === ""){
+      aviso += "\nE: Metodo de Pago no debe estar vacio";
+      error+=1;
+    }
+    if( Number.isInteger(card) ||  card === ""){
+      aviso += "\nE: El Campo Tarjeta debe contener un entero y no debe estar vacio.";
+      error+=1;
+    }
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
 
-        type:'PUT',
-        url:'/purchase/update/' + id ,
-        data: {
-          paymentMethod : paymentMethod,
-          card : card,
-          startdate : startdate,
-          finishdate : finishdate,
-          deadline : deadline,
-          user_id : user_id,
-          publication_id : publication_id
-        },
-        success: function(data){
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+          type:'PUT',
+          url:'/purchase/update/' + id ,
+          data: {
+            paymentMethod : paymentMethod,
+            card : card,
+            startdate : startdate,
+            finishdate : finishdate,
+            deadline : deadline,
+            user_id : user_id,
+            publication_id : publication_id
+          },
+          success: function(data){
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#AvisoPurch").html(aviso);
   }
 </script>

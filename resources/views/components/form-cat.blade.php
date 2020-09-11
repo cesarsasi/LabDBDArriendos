@@ -72,11 +72,11 @@
     let error = 0;
 
     if( name === "" || name.lenght>20){
-      aviso += "E: Nombre categoria no debe estar vacio ni mayor a 20 caracteres.\n"
+      aviso += "E: Nombre categoria no debe estar vacio ni mayor a 20 caracteres.\n";
       error+=1;
     }
     if( type === "" || name.lenght>20){
-      aviso += "\nE: Tipo categoria no debe estar vacio ni mayor a 20 caracteres"
+      aviso += "\nE: Tipo categoria no debe estar vacio ni mayor a 20 caracteres";
       error+=1;
     }
     if(error == 0 ){

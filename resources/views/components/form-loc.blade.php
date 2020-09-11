@@ -78,8 +78,8 @@
 	  </div>
 	  <input id="locStreet" type="text" maxlength="20" class="form-control" placeholder="Nueva Direccion" aria-label="calle" aria-describedby="basic-addon4">
 	</div>
-
-	<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendLoc();"/>
+	<a id="AvisoLoc"></a>
+	<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendLoc();"/>
 
 </form>
 
@@ -93,27 +93,44 @@
 <script type="text/javascript">
 
   function sendLoc(){
-
     var idloc = document.getElementById("locId").value;
     var Regloc = document.getElementById("locRegion").value;
     var Comloc = document.getElementById("locComuna").value;
     var Streloc = document.getElementById("locStreet").value;
+    let aviso = "";
+    let error = 0;
 
-    $.ajax({
-
-        type:'PUT',
-        url:'/location/update/' + idloc ,
-        data: {
-          region : Regloc,
-          commune : Comloc,
-          street : Streloc
-        },
-        success: function(data){
-        	console.log("update exitoso");
-        },
-        error: function(data){
-        	console.log("update fallido");
-        }
-    });
+    if( Regloc === "" || Regloc.lenght>20){
+      aviso += "E: La region no debe estar vacio, ni mayor a 20 caracteres.\n";
+      error+=1;
+    }
+    if( Comloc === "" || Comloc.lenght>500){
+      aviso += "E: La comuna no debe estar vacio, ni mayor a 20 caracteres.\n";
+      error+=1;
+    }
+    if( Streloc === "" || Streloc.lenght>500){
+      aviso += "E: La calle no debe estar vacio, ni mayor a 20 caracteres.\n";
+      error+=1;
+    }
+    
+    if(error == 0 ){
+      	aviso = "Modificación Realizada Exitosamente";
+	    $.ajax({
+	        type:'PUT',
+	        url:'/location/update/' + idloc ,
+	        data: {
+	          region : Regloc,
+	          commune : Comloc,
+	          street : Streloc
+	        },
+	        success: function(data){
+	        	console.log("update exitoso");
+	        },
+	        error: function(data){
+	        	console.log("update fallido");
+	        }
+	    });
+	}
+    $("#AvisoLoc").html(aviso);
   }
 </script>

@@ -103,8 +103,8 @@
 			  @endforeach
     </select> 
 </div>
-
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendPubl();"/>
+<a id="AvisoPub"></a>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendPubl();"/>
 
 </form>
 
@@ -122,25 +122,42 @@
     var category_idPub = document.getElementById("idCatPubl").value;
     var locate_idPub = document.getElementById("idLocPubl").value;
     var user_idPub = document.getElementById("idUserPubl").value;
+    let aviso = "";
+    let error = 0;
 
-    $.ajax({
-
-        type:'PUT',
-        url:'/publication/update/' + idPub ,
-        data: {
-		      description : descriptionPub,
-          price : pricePub,
-          stock : stockPub,
-          category_id : category_idPub,
-          locate_id : locate_idPub,
-          user_id : user_idPub
-        },
-        success: function(data){
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+    if( descriptionPub === "" || descriptionPub.lenght>500){
+      aviso += "E: La descripción no debe estar vacio, ni mayor a 500 caracteres.\n";
+      error+=1;
+    }
+    if( Number.isInteger(pricePub)  ||  pricePub === ""){
+      aviso += "\nE: Precio no debe estar vacio.";
+      error+=1;
+    }
+    if( Number.isInteger(stockPub) ||  stockPub === ""){
+      aviso += "\nE: Stock no debe estar vacio.";
+      error+=1;
+    }
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
+          type:'PUT',
+          url:'/publication/update/' + idPub ,
+          data: {
+  		      description : descriptionPub,
+            price : pricePub,
+            stock : stockPub,
+            category_id : category_idPub,
+            locate_id : locate_idPub,
+            user_id : user_idPub
+          },
+          success: function(data){
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#AvisoPub").html(aviso);
   }
 </script>

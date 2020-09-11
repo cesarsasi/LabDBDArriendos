@@ -127,15 +127,15 @@
     let error = 0;
 
     if( comment === "" || comment.lenght>500){
-      aviso += "E: El comentario no debe estar vacio, ni mayor a 500 caracteres.\n"
+      aviso += "E: El comentario no debe estar vacio, ni mayor a 500 caracteres.\n";
       error+=1;
     }
-    if( Number.isInteger(score) &&  score<6 && score >= 0){
-      aviso += "\nE: Puntuación no debe estar vacio, valor entre 0 y 5"
+    if( Number.isInteger(score) ||  (score>6 && 0 > score)){
+      aviso += "\nE: Puntuación no debe estar vacio, valor entre 0 y 5";
       error+=1;
     }
     if(validarFormatoFecha(date) || date === ""){
-      aviso += "\nE: La fecha no debe estar vacio debe estar en el formato dd/mm/aaaa"
+      aviso += "\nE: La fecha no debe estar vacio debe estar en el formato dd/mm/aaaa";
       error+=1;
     }
     if(error == 0 ){

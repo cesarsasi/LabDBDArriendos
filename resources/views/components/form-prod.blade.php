@@ -71,8 +71,8 @@
 			  @endforeach
     </select> 
 </div>
-
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendProd();"/>
+<a id="AvisoLoc"></a>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendProd();"/>
 
 </form>
 
@@ -93,21 +93,35 @@
     var availability = document.getElementById("disp").value;
     var publication_id = document.getElementById("idPublProd").value;
 
-    $.ajax({
+    let aviso = "";
+    let error = 0;
 
-        type:'PUT',
-        url:'/product/update/' + id ,
-        data: {
-		  name : name,
-          availability : availability,
-          publication_id : publication_id
-        },
-        success: function(data){
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+    if( name === "" || name.lenght>20){
+      aviso += "E: El nombre no debe estar vacio, ni mayor a 20 caracteres.\n";
+      error+=1;
+    }
+    if( Number.isInteger(availability) || availability === ""){
+      aviso += "\nE: La disponibilidad no debe estar vacia.";
+      error+=1;
+    }
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
+          type:'PUT',
+          url:'/product/update/' + id ,
+          data: {
+  		      name : name,
+            availability : availability,
+            publication_id : publication_id
+          },
+          success: function(data){
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#AvisoLoc").html(aviso);
   }
 </script>
