@@ -71,24 +71,22 @@
     let aviso = "";
     let error = 0;
 
-    if( name === "" ){
-      aviso += "E: Nombre categoria vacía.\n"
+    if( name === "" || name.lenght>20){
+      aviso += "E: Nombre categoria no debe estar vacio ni mayor a 20 caracteres.\n"
       error+=1;
     }
-    if( type === "" ){
-      aviso += "\nE: Tipo categoria vacía"
+    if( type === "" || name.lenght>20){
+      aviso += "\nE: Tipo categoria no debe estar vacio ni mayor a 20 caracteres"
       error+=1;
     }
-    if(error == 0 )
-      aviso = "Moficiacion Realizada"
-    $("#Aviso").html(aviso);
-
-    $.ajax({
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
 
         type:'PUT',
         url:'/category/update/' + id ,
         data: {
-		      name : name,
+          name : name,
           type : type
         },
         success: function(data){
@@ -98,5 +96,7 @@
           console.log("update fallido");
         }
     });
+    }
+    $("#Aviso").html(aviso);
   }
 </script>

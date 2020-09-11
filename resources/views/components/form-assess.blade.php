@@ -95,7 +95,8 @@
 			  @endforeach
     </select> 
 </div>
-<input type="submit" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendAssess();"/>
+<a id="AvisoAss"></a>
+<input type="button" class="btn btn-outline-dark btn-block border-dark" value="Modificar"  onclick="sendAssess();"/>
 </form>
 
 </div>
@@ -104,6 +105,14 @@
 
 
 <script type="text/javascript">
+  function validarFormatoFecha(campo) {
+      var RegExPattern = /^\d{2,4}\/\d{1,2}\/\d{1,2}$/;
+      if ((campo.match(RegExPattern)) && (campo!='')) {
+            return true;
+      } else {
+            return false;
+      }
+  }
 
   function sendAssess(){
 
@@ -114,26 +123,42 @@
     var publication_id = document.getElementById("idPublAssess").value;
     var purchase_id = document.getElementById("idCompAssess").value;
 
+    let aviso = "";
+    let error = 0;
 
-
-    $.ajax({
-
-        type:'PUT',
-        url:'/assessment/update/' + id ,
-        data: {
-          score : score,
-          date : date,
-          comment : comment,
-          publication_id : publication_id,
-          purchase_id : purchase_id
-        },
-        success: function(data){
-          console.log("update exitoso");
-        },
-        error: function(data){
-          console.log("update fallido");
-        }
-    });
+    if( comment === "" || comment.lenght>500){
+      aviso += "E: El comentario no debe estar vacio, ni mayor a 500 caracteres.\n"
+      error+=1;
+    }
+    if( Number.isInteger(score) &&  score<6 && score >= 0){
+      aviso += "\nE: Puntuación no debe estar vacio, valor entre 0 y 5"
+      error+=1;
+    }
+    if(validarFormatoFecha(date) || date === ""){
+      aviso += "\nE: La fecha no debe estar vacio debe estar en el formato dd/mm/aaaa"
+      error+=1;
+    }
+    if(error == 0 ){
+      aviso = "Modificación Realizada Exitosamente";
+      $.ajax({
+          type:'PUT',
+          url:'/assessment/update/' + id ,
+          data: {
+            score : score,
+            date : date,
+            comment : comment,
+            publication_id : publication_id,
+            purchase_id : purchase_id
+          },
+          success: function(data){
+            console.log("update exitoso");
+          },
+          error: function(data){
+            console.log("update fallido");
+          }
+      });
+    }
+    $("#AvisoAss").html(aviso);
   }
 </script>
 
