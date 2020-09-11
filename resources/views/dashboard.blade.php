@@ -63,7 +63,7 @@
             </p>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div >
-                <a id = "hideShowTabProd" onclick="ShowHideTabProd()">Visualizar tabla</a>
+                <a id = "hideShowTabProd" class="dropdown-item" onclick="ShowHideTabProd()">Visualizar tabla</a>
                 <a id = "hideShowFormProd" class="dropdown-item" onclick="ShowHideFormProd()">Editar tupla de datos</a>
               </div>
           </li>
