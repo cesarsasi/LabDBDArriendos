@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,117 +45,117 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Categoria
             </a>
             </p>
-            <div class="collapse" id="collapseExample1">
-              <div class="card card-body">
-                <a id = "hideShowTabCat" class="nav-link active" onclick="ShowHideTabCat()" >Visualizar tabla</a>
-                <a id = "hideShowFormCat" class="nav-link active" onclick="ShowHideFormCat()">Editar tupla de datos</a>
-              </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div>
+                <a id = "hideShowTabCat" class="dropdown-item"   onclick="ShowHideTabCat()" >Visualizar tabla</a>
+                <a id = "hideShowFormCat" class="dropdown-item"  onclick="ShowHideFormCat()">Editar tupla de datos</a>  
+                </div>     
           </li>
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Producto
             </a>
             </p>
-            <div class="collapse" id="collapseExample2">
-              <div class="card card-body">
-                <a id = "hideShowTabProd" class="nav-link active" onclick="ShowHideTabProd()">Visualizar tabla</a>
-                <a id = "hideShowFormProd" class="nav-link active" onclick="ShowHideFormProd()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div >
+                <a id = "hideShowTabProd" onclick="ShowHideTabProd()">Visualizar tabla</a>
+                <a id = "hideShowFormProd" class="dropdown-item" onclick="ShowHideFormProd()">Editar tupla de datos</a>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Publicacion
             </a>
             </p>
-            <div class="collapse" id="collapseExample3">
-              <div class="card card-body">
-                <a id = "hideShowTabPubl" class="nav-link active" onclick="ShowHideTabPub()">Visualizar tabla</a>
-                <a id = "hideShowFormPubl" class="nav-link active" onclick="ShowHideFormPub()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabPubl" class="dropdown-item" onclick="ShowHideTabPub()">Visualizar tabla</a>
+                <a id = "hideShowFormPubl" class="dropdown-item" onclick="ShowHideFormPub()">Editar tupla de datos</a>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Ubicacion
             </a>
             </p>
-            <div class="collapse" id="collapseExample4">
-              <div class="card card-body">
-                <a id = "hideShowTabLocat" class="nav-link active" onclick="ShowHideTabLocat()">Visualizar tabla</a>
-                <a id = "hideShowFormLocat" class="nav-link active" onclick="ShowHideFormLocat()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabLocat" class="dropdown-item" onclick="ShowHideTabLocat()">Visualizar tabla</a>
+                <a id = "hideShowFormLocat" class="dropdown-item" onclick="ShowHideFormLocat()">Editar tupla de datos</a>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Valoraciones
             </a>
             </p>
-            <div class="collapse" id="collapseExample5">
-              <div class="card card-body">
-                <a id = "hideShowTabAssess" class="nav-link active" onclick="ShowHideTabVal()">Visualizar tabla</a>
-                <a id = "hideShowFormAssess" class="nav-link active" onclick="ShowHideFormVal()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabAssess" class="dropdown-item" onclick="ShowHideTabVal()">Visualizar tabla</a>
+                <a id = "hideShowFormAssess" class="dropdown-item" onclick="ShowHideFormVal()">Editar tupla de datos</a>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Compras
             </a>
             </p>
-            <div class="collapse" id="collapseExample6">
-              <div class="card card-body">
-                <a id = "hideShowTabPurch" class="nav-link active" onclick="ShowHideTabComp()">Visualizar tabla</a>
-                <a id = "hideShowFormPurch" class="nav-link active" onclick="ShowHideFormComp()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabPurch" class="dropdown-item" onclick="ShowHideTabComp()">Visualizar tabla</a>
+                <a id = "hideShowFormPurch" class="dropdown-item" onclick="ShowHideFormComp()">Editar tupla de datos</a>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Tabla Usuarios
             </a>
             </p>
-            <div class="collapse" id="collapseExample7">
-              <div class="card card-body">
-                <a id = "hideShowTabUser" class="nav-link active" onclick="ShowHideTabUser()">Visualizar tabla</a>
-                <a id = "hideShowFormUser" class="nav-link active" onclick="ShowHideFormUser()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabUser" class="dropdown-item" onclick="ShowHideTabUser()">Visualizar tabla</a>
+                <a id = "hideShowFormUser" class="dropdown-item" onclick="ShowHideFormUser()">Editar tupla de datos</a>
               </div>
           </li>
 
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
             Tabla Transacción
             </a>
             </p>
-            <div class="collapse" id="collapseExample8">
-              <div class="card card-body">
-                <a id = "hideShowTabTrans" class="nav-link active" onclick="ShowHideTabTrans()">Visualizar tabla</a>
-                <a id = "hideShowFormTrans" class="nav-link active" onclick="ShowHideFormTrans()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabTrans" class="dropdown-item" onclick="ShowHideTabTrans()">Visualizar tabla</a>
+                <a id = "hideShowFormTrans" class="dropdown-item" onclick="ShowHideFormTrans()">Editar tupla de datos</a>
               </div>
           </li>
 
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
             Tabla Roles
             </a>
             </p>
-            <div class="collapse" id="collapseExample9">
-              <div class="card card-body">
-                <a id = "hideShowTabRol" class="nav-link active" onclick="ShowHideTabRol()">Visualizar tabla</a>
-                <a id = "hideShowFormRol" class="nav-link active" onclick="ShowHideFormRol()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabRol" class="dropdown-item" onclick="ShowHideTabRol()">Visualizar tabla</a>
+                <a id = "hideShowFormRol" class="dropdown-item" onclick="ShowHideFormRol()">Editar tupla de datos</a>
               </div>
           </li>
 
-          <li class="nav-item">
-            <a class="btn btn-dark btn-block" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
+          <li class="btn-group p-2">
+            <a class="btn btn-dark btn-block dropdown-toggle " type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
             Tabla Roles de Usuario
             </a>
             </p>
-            <div class="collapse" id="collapseExample10">
-              <div class="card card-body">
-                <a id = "hideShowTabRolUser" class="nav-link active" onclick="ShowHideTabRolUser()">Visualizar tabla</a>
-                <a id = "hideShowFormRolUser" class="nav-link active" onclick="ShowHideFormRolUser()">Editar tupla de datos</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="">
+                <a id = "hideShowTabRolUser" class="dropdown-item" onclick="ShowHideTabRolUser()">Visualizar tabla</a>
+                <a id = "hideShowFormRolUser" class="dropdown-item" onclick="ShowHideFormRolUser()">Editar tupla de datos</a>
               </div>
           </li>
           
@@ -495,12 +495,12 @@
   };
   function ShowHideFormRolUser(){
     let text = "";
-    if($("#hideShowFormRolUser").text() === "Visualizar tabla"){
+    if($("#hideShowFormRolUser").text() === "Editar tupla de datos"){
       $("#formRolUser").show();
-      text = "Ocultar tabla";
+      text = "Cerrar Edición";
     }else{
       $("#formRolUser").hide();
-      text = "Visualizar tabla";
+      text = "Editar tupla de datos";
     }
     $("#hideShowFormRolUser").html(text);
   }
