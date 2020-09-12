@@ -258,9 +258,57 @@
   $("#formPubl").hide();
   $("#formPurch").hide();
 
+
+  function HideAll(){
+    let text = "Visualizar tabla";
+    $("#tabCat").hide();
+    $("#hideShowTabCat").html(text);
+    $("#tabLocat").hide();
+    $("#hideShowTabLocat").html(text);
+    $("#tabRol").hide();
+    $("#hideShowTabRol").html(text);
+    $("#tabRolUser").hide();
+    $("#hideShowTabRolUser").html(text);
+    $("#tabTrans").hide();
+    $("#hideShowTabTrans").html(text);
+    $("#tabUser").hide();
+    $("#hideShowTabUser").html(text);
+    $("#tabAssessment").hide();
+    $("#hideShowTabAssessment").html(text);
+    $("#tabProd").hide();
+    $("#hideShowTabProd").html(text);
+    $("#tabPubl").hide();
+    $("#hideShowTabPubl").html(text);
+    $("#tabPurch").hide();
+    $("#hideShowTabPurch").html(text);
+
+    text = "Editar tupla de datos";
+    $("#formCat").hide();
+    $("#hideShowFormCat").html(text);
+    $("#formLocat").hide();
+    $("#hideShowFormLocat").html(text);
+    $("#formRol").hide();
+    $("#hideShowFormRol").html(text);
+    $("#formRolUser").hide();
+    $("#hideShowFormRolUser").html(text);
+    $("#formTrans").hide();
+    $("#hideShowFormTrans").html(text);
+    $("#formUser").hide();
+    $("#hideShowFormUser").html(text);
+    $("#formAssess").hide();
+    $("#hideShowFormAssess").html(text);
+    $("#formProd").hide();
+    $("#hideShowFormProd").html(text);
+    $("#formPubl").hide();
+    $("#hideShowFormPubl").html(text);
+    $("#formPurch").hide();
+    $("#hideShowFormPurch").html(text);
+  };
+
   function ShowHideTabCat(){
     let text = "";
     if($("#hideShowTabCat").text() === "Visualizar tabla"){
+      HideAll();
       $("#tabCat").show();
       text = "Ocultar tabla";
     }else{
@@ -272,6 +320,7 @@
   function ShowHideTabLocat(){
     let text = "";
     if($("#hideShowTabLocat").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabLocat").show();
       text = "Ocultar tabla";
     }else{
@@ -283,6 +332,7 @@
   function ShowHideTabRol(){
     let text = "";
     if($("#hideShowTabRol").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabRol").show();
       text = "Ocultar tabla";
     }else{
@@ -294,6 +344,7 @@
   function ShowHideTabRolUser(){
     let text = "";
     if($("#hideShowTabRolUser").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabRolUser").show();
       text = "Ocultar tabla";
     }else{
@@ -305,6 +356,7 @@
   function ShowHideTabTrans(){
     let text = "";
     if($("#hideShowTabTrans").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabTrans").show();
       text = "Ocultar tabla";
     }else{
@@ -316,6 +368,7 @@
   function ShowHideTabUser(){
     let text = "";
     if($("#hideShowTabUser").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabUser").show();
       text = "Ocultar tabla";
     }else{
@@ -327,6 +380,7 @@
   function ShowHideTabVal(){
     let text = "";
     if($("#hideShowTabAssess").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabAssessment").show();
       text = "Ocultar tabla";
     }else{
@@ -338,6 +392,7 @@
   function ShowHideTabProd(){
     let text = "";
     if($("#hideShowTabProd").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabProd").show();
       text = "Ocultar tabla";
     }else{
@@ -350,6 +405,7 @@
   function ShowHideTabPub(){
     let text = "";
     if($("#hideShowTabPubl").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabPubl").show();
       text = "Ocultar tabla";
     }else{
@@ -362,6 +418,7 @@
   function ShowHideTabComp(){
     let text = "";
     if($("#hideShowTabPurch").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabPurch").show();
       text = "Ocultar tabla";
     }else{
@@ -374,6 +431,7 @@
   function ShowHideTabRolUser(){
     let text = "";
     if($("#hideShowTabRolUser").text() === "Visualizar tabla"){
+      HideAll()
       $("#tabRolUser").show();
       text = "Ocultar tabla";
     }else{
@@ -386,6 +444,7 @@
   function ShowHideFormCat(){
     let text = "";
     if($("#hideShowFormCat").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formCat").show();
       text = "Cerrar Edición";
     }else{
@@ -398,6 +457,7 @@
   function ShowHideFormLocat(){
     let text = "";
     if($("#hideShowFormLocat").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formLocat").show();
       text = "Cerrar Edición";
     }else{
@@ -409,6 +469,7 @@
   function ShowHideFormUser(){
     let text = "";
     if($("#hideShowFormUser").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formUser").show();
       text = "Cerrar Edición";
     }else{
@@ -420,6 +481,7 @@
   function ShowHideFormPub(){
     let text = "";
     if($("#hideShowFormPubl").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formPubl").show();
       text = "Cerrar Edición";
     }else{
@@ -431,6 +493,7 @@
   function ShowHideFormComp(){
     let text = "";
     if($("#hideShowFormPurch").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formPurch").show();
       text = "Cerrar Edición";
     }else{
@@ -442,6 +505,7 @@
   function ShowHideFormProd(){
     let text = "";
     if($("#hideShowFormProd").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formProd").show();
       text = "Cerrar Edición";
     }else{
@@ -453,6 +517,7 @@
   function ShowHideFormVal(){
     let text = "";
     if($("#hideShowFormAssess").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formAssess").show();
       text = "Cerrar Edición";
     }else{
@@ -464,6 +529,7 @@
   function ShowHideFormRol(){
     let text = "";
     if($("#hideShowFormRol").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formRol").show();
       text = "Cerrar Edición";
     }else{
@@ -475,6 +541,7 @@
   function ShowHideFormRolUser(){
     let text = "";
     if($("#hideShowFormRolUser").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formRolUser").show();
       text = "Cerrar Edición";
     }else{
@@ -486,6 +553,7 @@
   function ShowHideFormTrans(){
     let text = "";
     if($("#hideShowFormTrans").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formTrans").show();
       text = "Cerrar Edición";
     }else{
@@ -497,6 +565,7 @@
   function ShowHideFormRolUser(){
     let text = "";
     if($("#hideShowFormRolUser").text() === "Editar tupla de datos"){
+      HideAll()
       $("#formRolUser").show();
       text = "Cerrar Edición";
     }else{
