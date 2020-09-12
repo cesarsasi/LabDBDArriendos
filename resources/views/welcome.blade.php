@@ -15,8 +15,6 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
                 height: 100vh;
                 margin: 0;
             }
@@ -85,6 +83,7 @@
             </button>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
+                    <a class="btn btn-outline-light border-whithe btn-sm" href="/about">Acerca de Nosotros</a>
                     <a class="btn btn-outline-light border-whithe btn-sm" href="/">Menu principal</a>
                 </li>
             </ul>
@@ -116,10 +115,11 @@
         </div>
 
         <div class="col text-center">
-            <a class="btn btn-dark btn-lg" style="margin:50px" href="/login">Iniciar seción</a>
+            <a class="btn btn-dark btn-lg" style="margin:50px" href="/login">Iniciar sesión</a>
             <a class="btn btn-dark btn-lg" style="margin:50px" href="/register">Registrarse</a>
             <a class="btn btn-dark btn-lg" style="margin:50px" href="/dashboard">Dashboard</a>
         </div>
+<!--
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -144,11 +144,11 @@
                     <a href="/login">Login</a>
                     <a href="/dashboard">Dashboard</a>
                     <a href="https://github.com/cesarsasi/labDBD">GitHub</a>
-                    <!--<a href="https://laracasts.com"></a>-->
-                    <!--<a href="/assessment/all">Reseñas</a>-->
+                    <a href="https://laracasts.com"></a>
+                    <a href="/assessment/all">Reseñas</a>
                 </div>
             </div>
-
+        -->
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

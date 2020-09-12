@@ -35,6 +35,7 @@
       </button>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
+          <a class="btn btn-outline-light border-whithe btn-sm" href="/about">Acerca de Nosotros</a>
           <a class="btn btn-outline-light border-whithe btn-sm" href="/">Menu principal</a>
         </li>
       </ul>
