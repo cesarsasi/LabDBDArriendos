@@ -103,3 +103,4 @@ Route::put('/user/update/{id}', 'UserController@update');
 Route::delete('/user/delete/{id}', 'UserController@delete');
 
 Route::post('/user/create', 'RegisterController@store')->name('crearUser');
+Route::post('/login', 'LoginController@login')->name('loginUser');

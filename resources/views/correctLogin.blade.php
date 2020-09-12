@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Login</title>
+    <title>Welcome</title>
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -19,32 +19,18 @@
       </button>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="btn btn-outline-light border-whithe btn-sm" href="/about">Acerca de Nosotros</a>
           <a class="btn btn-outline-light border-whithe btn-sm" href="/">Menu principal</a>
         </li>
       </ul>
     </nav>
 
     <h1>
-        Iniciar Sesión
+        Se ha iniciado sesion correctamente
     </h1>
-    <form action="{{route('loginUser')}} " method="POST">
-      @csrf
-      <div class="form-group mx-auto w-25">
-        <label for="casillaEmail">Email</label>
-        <input type="email" class="form-control" name="email" id="email" maxlength="20" placeholder="Ingrese su email">
-      </div>
-      <div class="form-group mx-auto w-25">
-        <label for="casillaContraseña">Contraseña</label>
-        <input type="password" class="form-control" name="password" id="password" maxlength="500" placeholder="Ingrese su contraseña">
-      </div>
-      <div class="col text-center mb-2">
-          <button type="submit" class="btn btn-dark">Iniciar Sesión</button>
-      </div>
-      <div class="col text-center">
-          <a class="btn btn-dark" href="/register">Registrarse</a>
-      </div>
-  </form>
+    <div class="col text-center">
+        <a class="btn btn-dark" href="/dashboard">Continuar</a>
+  </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

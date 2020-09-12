@@ -30,7 +30,7 @@
     </h1>
     
 
-    <form action="{{route( 'crearUser')}} " method="POST">
+    <form action="{{route('crearUser')}} " method="POST">
       @csrf
         <div class="form-group mx-auto w-25">
             <label for="casillaNombre">Nombre</label>
