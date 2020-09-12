@@ -274,7 +274,7 @@
     $("#tabUser").hide();
     $("#hideShowTabUser").html(text);
     $("#tabAssessment").hide();
-    $("#hideShowTabAssessment").html(text);
+    $("#hideShowTabAssess").html(text);
     $("#tabProd").hide();
     $("#hideShowTabProd").html(text);
     $("#tabPubl").hide();
