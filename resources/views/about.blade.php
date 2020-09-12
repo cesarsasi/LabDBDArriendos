@@ -32,28 +32,44 @@
         <h5 class="card-title">Grupo 2</h5>
         <h6 class="card-subtitle mb-2 text-muted">Diseño de Base de Datos</h6>
         <p class="card-text">El grupo con la mejor descripción.</p>
-        <a href="https://github.com/cesarsasi/labDBD" class="card-link">GitHub</a>
+        <a href="https://github.com/cesarsasi/labDBD" class="card-link">GitHub del Sitio</a>
       </div>
     </div>
 
     <!-- Grid de integrantes -->
-    <div class="container">
+    <div class="container text-center">
       <div class="row">
         <div class="col">
-          César Salazar
-          <img src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="Avatar de César Salazar">
+          <div class="card text-center bg-secondary text-white mx-auto" style="width: 15rem; margin:10px">
+            <div class="card-body">
+              <h5 class="card-title">Carlos Barahona</h5>
+              <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=Black&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Serious&skinColor=Pale' width="200" height="200" alt="Avatar de Carlos Barahona"/>
+            </div>
+          </div>
         </div>
         <div class="col">
-          Carlos Barahona
-          <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=Black&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Serious&skinColor=Pale'/>
+          <div class="card text-center bg-secondary text-white mx-auto" style="width: 15rem; margin:10px">
+            <div class="card-body">
+              <h5 class="card-title">Grabriel Bustamante</h5>
+              <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBob&accessoriesType=Sunglasses&hairColor=Auburn&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Cumbia&eyeType=WinkWacky&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Yellow' width="200" height="200" alt="Avatar de Grabriel Bustamante"/>
+            </div>
+          </div>
         </div>
         <div class="col">
-          Grabriel Bustamante
-          <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBob&accessoriesType=Sunglasses&hairColor=Auburn&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Cumbia&eyeType=WinkWacky&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Yellow'/>
+          <div class="card text-center bg-secondary text-white mx-auto" style="width: 15rem; margin:10px">
+            <div class="card-body">
+              <h5 class="card-title">César Salazar</h5>
+              <img src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light" width="200" height="200" alt="Avatar de César Salazar">
+            </div>
+          </div>
         </div>
         <div class="col">
-          Álex Tobar
-          <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Blank&hairColor=Platinum&facialHairType=MoustacheFancy&facialHairColor=BlondeGolden&clotheType=BlazerShirt&clotheColor=Gray01&eyeType=EyeRoll&eyebrowType=Angry&mouthType=Smile&skinColor=Yellow'/>
+          <div class="card text-center bg-secondary text-white mx-auto" style="width: 15rem; margin:10px">
+            <div class="card-body">
+              <h5 class="card-title">Álex Tobar</h5>
+              <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Blank&hairColor=Platinum&facialHairType=MoustacheFancy&facialHairColor=BlondeGolden&clotheType=BlazerShirt&clotheColor=Gray01&eyeType=EyeRoll&eyebrowType=Angry&mouthType=Smile&skinColor=Yellow' width="200" height="200" alt="Avatar de Álex Tobar"/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
