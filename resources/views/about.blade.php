@@ -50,8 +50,8 @@
         <div class="col">
           <div class="card text-center bg-secondary text-white mx-auto" style="width: 15rem; margin:10px">
             <div class="card-body">
-              <h5 class="card-title">Grabriel Bustamante</h5>
-              <img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBob&accessoriesType=Sunglasses&hairColor=Auburn&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Cumbia&eyeType=WinkWacky&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Yellow' width="200" height="200" alt="Avatar de Grabriel Bustamante"/>
+              <h5 class="card-title">Gabriel Bustamante</h5>
+              <img src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light' width="200" height="200" alt="Avatar de Grabriel Bustamante"'/>
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@
 	            <th>Nombre</th>
 	            <th>Apellido</th>
 	            <th>Email</th>
-	            <th>Constraseña</th>
+	            <th>Contraseña</th>
 	            <th>Descripción</th>
 	          </tr>
 	        </thead>

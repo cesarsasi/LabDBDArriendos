@@ -117,7 +117,6 @@
         <div class="col text-center">
             <a class="btn btn-dark btn-lg" style="margin:50px" href="/login">Iniciar sesión</a>
             <a class="btn btn-dark btn-lg" style="margin:50px" href="/register">Registrarse</a>
-            <a class="btn btn-dark btn-lg" style="margin:50px" href="/dashboard">Dashboard</a>
         </div>
 <!--
         <div class="flex-center position-ref full-height">

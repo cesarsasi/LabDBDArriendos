@@ -106,7 +106,7 @@
       error+=1;
     }
     if( passUser === "" || name.lenght>500){
-      aviso += "\nE: Porvafor ingrese una password valida.";
+      aviso += "\nE: Por favor ingrese una password valido.";
       error+=1;
     }
     if( descUser === "" || name.lenght>500){
